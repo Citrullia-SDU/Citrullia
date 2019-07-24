@@ -125,8 +125,8 @@ namespace Citrullia
                 else if(result.ValidationBy == "Arg-paired")
                 {
                     var spec = Quantification.argSpecScanDict.Where(citSpec => citSpec.Value.ScanNumber == result.CitSpectrumID).First();
-                    citSpectrum = spec.Key;
-                    argSpectrum = spec.Value;
+                    citSpectrum = spec.Value;
+                    argSpectrum = spec.Key;
                 }
                 else if(result.ValidationBy == "Lone")
                 {
