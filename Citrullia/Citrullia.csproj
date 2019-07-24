@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1054100A-00A1-4AF8-8FCF-33DF0F7EFB37}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Citrullia</RootNamespace>
+    <AssemblyName>Citrullia</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Citrullia.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>LogoRed.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CitrulliaSettings.cs" />
+    <Compile Include="Export.cs" />
+    <Compile Include="External.cs" />
+    <Compile Include="FileReader.cs" />
+    <Compile Include="FindMS1.cs" />
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperUtilities.cs" />
+    <Compile Include="Input.cs" />
+    <Compile Include="IonCalculation.cs" />
+    <Compile Include="MsSpectrum.cs" />
+    <Compile Include="NativeMethods.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\ScoreSettings.cs" />
+    <Compile Include="QuantificationLone.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuantificationLone.Designer.cs">
+      <DependentUpon>QuantificationLone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ResultFile.cs" />
+    <Compile Include="Properties\ScoreSettings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>ScoreSettings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Quantification.cs" />
+    <Compile Include="QuantResult.cs" />
+    <Compile Include="RawScan.cs" />
+    <Compile Include="ScoreFunction.cs" />
+    <Compile Include="ScoreSettings.cs" />
+    <Compile Include="UserControls\AnalAdvancedUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\AnalAdvancedUC.Designer.cs">
+      <DependentUpon>AnalAdvancedUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AnalGenUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\AnalGenUC.Designer.cs">
+      <DependentUpon>AnalGenUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AnalModUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\AnalModUC.Designer.cs">
+      <DependentUpon>AnalModUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AnalOptUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\AnalOptUC.Designer.cs">
+      <DependentUpon>AnalOptUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AnalParUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\AnalParUC.Designer.cs">
+      <DependentUpon>AnalParUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AnalysisXUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\AnalysisXUC.Designer.cs">
+      <DependentUpon>AnalysisXUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CitValUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\CitValUC.Designer.cs">
+      <DependentUpon>CitValUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MS1Val.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\MS1Val.Designer.cs">
+      <DependentUpon>MS1Val.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\StartUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\StartUC.Designer.cs">
+      <DependentUpon>StartUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ValFromArg.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ValFromArg.Designer.cs">
+      <DependentUpon>ValFromArg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ValFromCit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ValFromCit.Designer.cs">
+      <DependentUpon>ValFromCit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ValFromLoneCit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ValFromLoneCit.Designer.cs">
+      <DependentUpon>ValFromLoneCit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Validation.cs" />
+    <Compile Include="QuantificationPaired.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuantificationPaired.Designer.cs">
+      <DependentUpon>QuantificationPaired.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SpectrumWriterUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SpectrumWriterUI.Designer.cs">
+      <DependentUpon>SpectrumWriterUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ValidationCitUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ValidationCitUI.Designer.cs">
+      <DependentUpon>ValidationCitUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ValidationArgUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ValidationArgUI.Designer.cs">
+      <DependentUpon>ValidationArgUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ValidationLoneCitUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ValidationLoneCitUI.Designer.cs">
+      <DependentUpon>ValidationLoneCitUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ValidationUIUtilities.cs" />
+    <Compile Include="ValResult.cs" />
+    <Compile Include="XTModification.cs" />
+    <Compile Include="XTProtein.cs" />
+    <Compile Include="XTResult.cs" />
+    <Compile Include="XTSpectrum.cs" />
+    <Compile Include="XTInput.cs" />
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="QuantificationLone.resx">
+      <DependentUpon>QuantificationLone.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\AnalAdvancedUC.resx">
+      <DependentUpon>AnalAdvancedUC.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\AnalGenUC.resx">
+      <DependentUpon>AnalGenUC.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\AnalModUC.resx">
+      <DependentUpon>AnalModUC.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\AnalOptUC.resx">
+      <DependentUpon>AnalOptUC.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\AnalParUC.resx">
+      <DependentUpon>AnalParUC.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\AnalysisXUC.resx">
+      <DependentUpon>AnalysisXUC.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\CitValUC.resx">
+      <DependentUpon>CitValUC.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\MS1Val.resx">
+      <DependentUpon>MS1Val.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\StartUC.resx">
+      <DependentUpon>StartUC.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ValFromArg.resx">
+      <DependentUpon>ValFromArg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ValFromCit.resx">
+      <DependentUpon>ValFromCit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ValFromLoneCit.resx">
+      <DependentUpon>ValFromLoneCit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuantificationPaired.resx">
+      <DependentUpon>QuantificationPaired.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpectrumWriterUI.resx">
+      <DependentUpon>SpectrumWriterUI.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ValidationCitUI.resx">
+      <DependentUpon>ValidationCitUI.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ValidationArgUI.resx">
+      <DependentUpon>ValidationArgUI.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ValidationLoneCitUI.resx">
+      <DependentUpon>ValidationLoneCitUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\ScoreSettings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>ScoreSettings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LogoRed.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
