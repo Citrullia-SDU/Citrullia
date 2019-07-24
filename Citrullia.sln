@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Citrullia", "Citrullia\Citrullia.csproj", "{1054100A-00A1-4AF8-8FCF-33DF0F7EFB37}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupWizard", "SetupWizard\SetupWizard.vdproj", "{C4A20E1A-8CB2-4E99-8537-3434EE72A858}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1054100A-00A1-4AF8-8FCF-33DF0F7EFB37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1054100A-00A1-4AF8-8FCF-33DF0F7EFB37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1054100A-00A1-4AF8-8FCF-33DF0F7EFB37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1054100A-00A1-4AF8-8FCF-33DF0F7EFB37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4A20E1A-8CB2-4E99-8537-3434EE72A858}.Debug|Any CPU.ActiveCfg = Debug
+		{C4A20E1A-8CB2-4E99-8537-3434EE72A858}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {739C2C1B-E3BE-483B-8E4B-518054AF1D7C}
+	EndGlobalSection
+EndGlobal
