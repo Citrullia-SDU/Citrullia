@@ -3,7 +3,7 @@ name: Question
 about: Asking a question
 title: "[QUESTION]"
 labels: question
-assignees: ''
+assignees: Mads1000, Citrullia-SDU
 
 ---
 
