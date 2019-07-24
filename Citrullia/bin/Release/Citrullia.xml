@@ -1,0 +1,3453 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Citrullia</name>
+    </assembly>
+    <members>
+        <member name="T:Citrullia.CitrulliaSettings">
+            <summary>
+            The class containing setttings for Citrullia
+            </summary>
+        </member>
+        <member name="P:Citrullia.CitrulliaSettings.CitrulliaFolderPath">
+            <summary>The folder path to the Citrullia application.</summary>
+        </member>
+        <member name="P:Citrullia.CitrulliaSettings.VariableModificationMonoMassFile">
+            <summary>The file that contains the variable modifications (Monoisotopic mass).</summary>
+        </member>
+        <member name="P:Citrullia.CitrulliaSettings.VariableModificatioAvgMassFile">
+            <summary>The file that contains the variable modifications (Average mass).</summary>
+        </member>
+        <member name="P:Citrullia.CitrulliaSettings.FixedModificationFile">
+            <summary>The file that contains the fixed modifications.</summary>
+        </member>
+        <member name="P:Citrullia.CitrulliaSettings.DigestionEnzymeFile">
+            <summary>The file that contains the digestion enzymes.</summary>
+        </member>
+        <member name="P:Citrullia.CitrulliaSettings.XTandemFolder">
+            <summary>The folder for X!Tandem.</summary>
+        </member>
+        <member name="P:Citrullia.CitrulliaSettings.InputMgfFilesFolder">
+            <summary>The folder for the input MGF-files.</summary>
+        </member>
+        <member name="P:Citrullia.CitrulliaSettings.OutputXTandemFilesFolder">
+            <summary>The folder for the X!Tandem outputs.</summary>
+        </member>
+        <member name="P:Citrullia.CitrulliaSettings.XTandemUserInputFile">
+            <summary>The XML file for the X!Tandem user input.</summary>
+        </member>
+        <member name="P:Citrullia.CitrulliaSettings.XTandemDefaultInputFile">
+            <summary>The XML file for the X!Tandem default input.</summary>
+        </member>
+        <member name="P:Citrullia.CitrulliaSettings.XTandemTaxonomyFile">
+            <summary>The XML taxonomy file the X!Tandem.</summary>
+        </member>
+        <member name="M:Citrullia.CitrulliaSettings.#ctor">
+            <summary>
+            Create a new instance of <see cref="T:Citrullia.CitrulliaSettings"/>.
+            </summary>
+        </member>
+        <member name="T:Citrullia.Export">
+            <summary>
+            Export to Excel spredsheet
+            </summary>
+        </member>
+        <member name="M:Citrullia.Export.ExportDataGrid(System.Windows.Forms.DataGridView,System.Windows.Forms.DataGridView,System.Int32,System.Int32)">
+            <summary>
+            Export ion data grid for paired spectra.
+            </summary>
+            <param name="dgvCit">The citrullination ion data grid.</param>
+            <param name="dgvArg">The arginine ion data grid.</param>
+            <param name="idCit">The ID of the citrullinated spectrum.</param>
+            <param name="idArg">The ID of the arginine spectrum.</param>
+        </member>
+        <member name="M:Citrullia.Export.ExportDataGridLonely(System.Windows.Forms.DataGridView,System.Int32)">
+            <summary>
+            Export the ion data grid for lone citrullinated spectra.
+            </summary>
+            <param name="dgv">The data grid view.</param>
+            <param name="id">The ID of the lone citrullinated spectra.</param>
+        </member>
+        <member name="M:Citrullia.Export.CreateWorksheet(System.Windows.Forms.DataGridView,Microsoft.Office.Interop.Excel._Worksheet)">
+            <summary>
+            Create worksheet.
+            </summary>
+            <param name="dgv">The datagridview to be written.</param>
+            <param name="workSheet">The worksheet to be written to.</param>
+        </member>
+        <member name="T:Citrullia.External">
+            <summary>
+            Class for external calls.
+            </summary>
+        </member>
+        <member name="F:Citrullia.External.CitrulliaSettings">
+            <summary>The Citrullia settings.</summary>
+        </member>
+        <member name="F:Citrullia.External.XTandemInput">
+            <summary>The X!Tandem input data.</summary>
+        </member>
+        <member name="M:Citrullia.External.LaunchXTandem">
+            <summary>
+            Launch X!Tandem.
+            </summary>
+        </member>
+        <member name="M:Citrullia.External.MakeTandemInputXml(System.String)">
+            <summary>
+            Create the input XML-file for an MGF-file.
+            </summary>
+            <param name="mgfPath">The MGF-file.</param>
+        </member>
+        <member name="M:Citrullia.External.MakeTaxonomyXml">
+            <summary>
+            Create the taxonomy XML file.
+            </summary>
+        </member>
+        <member name="M:Citrullia.External.AddModificationsToTandem">
+            <summary>
+            Add the modification string to X!Tandem.
+            </summary>
+        </member>
+        <member name="M:Citrullia.External.DeleteExistingOutputs">
+            <summary>
+            Delete all the existing output files.
+            </summary>
+        </member>
+        <member name="M:Citrullia.External.XTandemSearchForEachMGF">
+            <summary>
+            Perform X!Tandem search for each of the input MGF-files.
+            </summary>
+        </member>
+        <member name="T:Citrullia.FileReader">
+            <summary>
+            Sstatic utility class for reading and writing files.
+            </summary>
+        </member>
+        <member name="F:Citrullia.FileReader.NumberFormat">
+            <summary>The number format to be used.</summary>
+        </member>
+        <member name="F:Citrullia.FileReader.fileLoadMode">
+            <summary>The mode of file loading. Either X!Tandem or Result file.</summary>
+        </member>
+        <member name="F:Citrullia.FileReader.inputResultPairs">
+            <summary>The list of tuples with MGX- and X!Tandem-file.</summary>
+        </member>
+        <member name="F:Citrullia.FileReader.resultFile">
+            <summary>The result file.</summary>
+        </member>
+        <member name="M:Citrullia.FileReader.OpenResultFileViaDialog">
+            <summary>
+            Open result files via OpenFileDialog.
+            </summary>
+            <returns>A list of filepaths.</returns>
+        </member>
+        <member name="M:Citrullia.FileReader.LoadResults(System.String)">
+            <summary>
+            Load the results.
+            </summary>
+            <param name="resultFilePath">The the filepath to the result file.</param>
+        </member>
+        <member name="M:Citrullia.FileReader.LoadQuantifiedCitSpectra">
+            <summary>
+            Load the quantified citrullination spectra.
+            </summary>
+        </member>
+        <member name="M:Citrullia.FileReader.LoadQuantifiedArgSpectra">
+            <summary>
+            Load the quantified arginine spectra.
+            </summary>
+        </member>
+        <member name="M:Citrullia.FileReader.LoadQuantifiedLoneCitSpectra">
+            <summary>
+            Load the quantified lone citrullination spectra.
+            </summary>
+        </member>
+        <member name="M:Citrullia.FileReader.FindLoneCitSpectra(System.Collections.Generic.List{System.Int32})">
+            <summary>
+            Find the lone citrullination spectra from their IDs.
+            </summary>
+            <param name="quantifiedLoneCitSpectraIds">The list of lone quantified spectra IDs.</param>
+            <returns>The list of line citrullination spectra.</returns>
+        </member>
+        <member name="M:Citrullia.FileReader.FindArgSpectra(System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.Int32,System.Int32}})">
+            <summary>
+            Find the arginine spectra from the IDs.
+            </summary>
+            <param name="quantifiedArgSpectraIds">The list of Ids.</param>
+            <returns>The list of quantified spectra.</returns>
+        </member>
+        <member name="M:Citrullia.FileReader.FindCitSpectra(System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.Int32,System.Int32}})">
+            <summary>
+            Find the citrullination spectra from the IDs.
+            </summary>
+            <param name="quantifiedCitSpectraIds">The list of Ids.</param>
+            <returns>The list of quantified spectra.</returns>
+        </member>
+        <member name="M:Citrullia.FileReader.CopyXTFilesToOutputFolder">
+            <summary>
+            Copy the result X!Tandem files to the output folder
+            </summary>
+        </member>
+        <member name="M:Citrullia.FileReader.ReadResultFile(System.String)">
+            <summary>
+            Read the result file.
+            </summary>
+            <param name="resultFilePath">The path of the result path.</param>
+            <returns>The parsed result file.</returns>
+        </member>
+        <member name="M:Citrullia.FileReader.CopyFilesTo(System.String@,System.Collections.Generic.Dictionary{System.String,System.String}@)">
+            <summary>
+            Copy files.
+            </summary>
+            <param name="directory">The directory they should be copied to as out parameter.</param>
+            <param name="filePair">The dictionary of filepairs as out parameter.</param>
+        </member>
+        <member name="M:Citrullia.FileReader.CreateResultFile(Citrullia.ResultFile,System.String)">
+            <summary>
+            Create the result file.
+            </summary>
+            <param name="resultFile">The result file.</param>
+            <param name="resultFilePath">The result file save path.</param>
+        </member>
+        <member name="M:Citrullia.FileReader.GenerateResultFile(System.Collections.Generic.List{Citrullia.QuantResult})">
+            <summary>
+            Generate the result file.
+            </summary>
+            <param name="quantResults">The list of quantification results.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Citrullia.FileReader.CreateSpectraFileList(System.Collections.Generic.List{Citrullia.QuantResult})">
+            <summary>
+            Get the dictionary of filenames and spectra IDs.
+            </summary>
+            <param name="results">The list of quantification results.</param>
+            <returns>The dictionary of the result files.</returns>
+        </member>
+        <member name="M:Citrullia.FileReader.CreateSpectraFileListLoneCit(System.Collections.Generic.List{Citrullia.QuantResult})">
+            <summary>
+            Create a collection of quantified spectra and their files.
+            </summary>
+            <param name="quantResults">The quantification results.</param>
+            <returns>The collection of quantified spectra and their files.</returns>
+        </member>
+        <member name="F:Citrullia.FileReader.inputFiles">
+            <summary>The list of inputs.</summary>
+        </member>
+        <member name="M:Citrullia.FileReader.OpenMGXFilesViaDialog">
+            <summary>
+            Open MGX-files via OpenFileDialog.
+            </summary>
+            <returns>A list of file paths.</returns>
+        </member>
+        <member name="M:Citrullia.FileReader.ReadInputFile(System.String)">
+            <summary>
+            Read the scans from a file.
+            </summary>
+            <param name="path">The filepath.</param>
+            <returns>A list of scans.</returns>
+        </member>
+        <member name="M:Citrullia.FileReader.LoadFiles(System.Collections.Generic.List{System.String})">
+            <summary>
+            Load the input files.
+            </summary>
+            <param name="filePaths">The list of filepaths.</param>
+            <returns>A list of input files.</returns>
+        </member>
+        <member name="M:Citrullia.FileReader.MakeMGFs(System.Collections.Generic.List{System.String})">
+            <summary>
+            Convert the MGX-files to MGF-files.
+            </summary>
+            <param name="filePaths">The list of paths to the files to be converted.</param>
+        </member>
+        <member name="M:Citrullia.FileReader.DeleteExistingInputMGFs">
+            <summary>
+            Delete existing input MGF-files.
+            </summary>
+        </member>
+        <member name="F:Citrullia.FileReader.XTandemSearchResults">
+            <summary>The X!Tandem search results.</summary>
+        </member>
+        <member name="M:Citrullia.FileReader.ReadResultXMLs">
+            <summary>
+            Read the result XML from X!Tandem.
+            </summary>
+        </member>
+        <member name="M:Citrullia.FileReader.ReturnXResult(System.Collections.Generic.List{Citrullia.XTResult})">
+            <summary>
+            Set the X!Tandem results.
+            </summary>
+            <param name="xTandemResults">The new X!Tandem results.</param>
+            <returns>The new X!Tandem results.</returns>
+        </member>
+        <member name="M:Citrullia.FileReader.ReadXML(System.String)">
+            <summary>
+            Read the X!Tandem result from a file.
+            </summary>
+            <param name="filename">The filename of the file.</param>
+            <returns>The <see cref="T:Citrullia.XTResult"/>.</returns>
+        </member>
+        <member name="M:Citrullia.FileReader.ExtractGroupData(System.Xml.Linq.XElement,Citrullia.XTSpectrum)">
+            <summary>
+            Extract the group data from the result file.
+            </summary>
+            <param name="group">The group data.</param>
+            <param name="spectrum">The spectrum.</param>
+            <returns>The spectrum with the group data.</returns>
+        </member>
+        <member name="M:Citrullia.FileReader.ExtractProteinData(System.Xml.Linq.XElement,Citrullia.XTProtein)">
+            <summary>
+            Extract protein data from the result file.
+            </summary>
+            <param name="pData">The protein data.</param>
+            <param name="protein">The protein.</param>
+            <returns>The protein with the protein data.</returns>
+        </member>
+        <member name="M:Citrullia.FileReader.ExtractSupportingData(System.Xml.Linq.XElement,System.String,Citrullia.XTSpectrum)">
+            <summary>
+            Extract the supporting data from the result file.
+            </summary>
+            <param name="supData">The suplementary data.</param>
+            <param name="df"></param>
+            <param name="spectrum">The spectrum.</param>
+            <returns>The specturm with the supporting data.</returns>
+        </member>
+        <member name="M:Citrullia.FileReader.ExtractSpectrumData(System.Xml.Linq.XElement,System.String,Citrullia.XTSpectrum)">
+            <summary>
+            Extract the spectrum data from the result file.
+            </summary>
+            <param name="specData">The spectrum data.</param>
+            <param name="df"></param>
+            <param name="spectrum">The spectrum.</param>
+            <returns>The specturm with the spectrum data.</returns>
+        </member>
+        <member name="M:Citrullia.FileReader.GenerateFileName(System.String,System.String,System.String)">
+            <summary>
+            Generate a filename for the file. 
+            </summary>
+            <param name="directory">The directory of the file.</param>
+            <param name="baseFilename">The base filename.</param>
+            <param name="extension">The file extension without the period (.).</param>
+            <returns>The unique generated filename.</returns>
+        </member>
+        <member name="M:Citrullia.FileReader.GetImageOutputPathViaDialog(System.String@)">
+            <summary>
+            Get an output path for an image via SaveFileDialog.
+            </summary>
+            <param name="filePath">The filepath as out parameter.</param>
+            <returns>True, if filepath is found; Otherwise, false.</returns>
+        </member>
+        <member name="T:Citrullia.FileLoadMode">
+            <summary>
+            The mode of file loading.
+            </summary>
+        </member>
+        <member name="F:Citrullia.FileLoadMode.ResultFile">
+            <summary>Load via an result file.</summary>
+        </member>
+        <member name="F:Citrullia.FileLoadMode.XTandemRun">
+            <summary>Load via XTandem run.</summary>
+        </member>
+        <member name="T:Citrullia.FindMS1">
+            <summary>
+            Data class for finding the MS1.
+            </summary>
+        </member>
+        <member name="M:Citrullia.FindMS1.FindOriginalMS1Info(Citrullia.XTSpectrum)">
+            <summary>
+            Find the original MS1 information such as retention time, orgininal scan number and the parent MS1 scan.
+            </summary>
+            <param name="spectrumMS2">The MS2 spectrum.</param>
+            <returns>The MS2 spectrum with the MS1 data.</returns>
+        </member>
+        <member name="M:Citrullia.FindMS1.FindPotCitParentMS1Scan(Citrullia.RawScan)">
+            <summary>
+            Find potential citrullination parent in MS1.
+            </summary>
+            <param name="scanMS2">The MS2 scan.</param>
+            <returns>The MS2 spectrum with the new information.</returns>
+        </member>
+        <member name="M:Citrullia.FindMS1.HandleOrphanSpecs(Citrullia.XTSpectrum)">
+            <summary>
+            Handle orphan spectra.
+            </summary>
+            <param name="spectrumMS2">The MS2 spectrum.</param>
+            <returns>The MS2 spectrum with a "false" parent.</returns>
+        </member>
+        <member name="M:Citrullia.FindMS1.HandleOrphanScans(Citrullia.RawScan)">
+            <summary>
+            Handle orphan scan.
+            </summary>
+            <param name="scanMS2">The MS2 scan.</param>
+            <returns>The MS2 scan with a "false" parent.</returns>
+        </member>
+        <member name="T:Citrullia.FormMain">
+            <summary>
+            The main form.
+            </summary>
+        </member>
+        <member name="M:Citrullia.FormMain.#ctor">
+            <summary>
+            Create a new instance of <see cref="T:Citrullia.FormMain"/>.
+            </summary>
+        </member>
+        <member name="M:Citrullia.FormMain.P2_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Move form around using mouse.
+            Source: https://stackoverflow.com/a/7125686
+            </summary>
+        </member>
+        <member name="M:Citrullia.FormMain.PCenter_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Move form around using mouse.
+            Source: https://stackoverflow.com/a/7125686
+            </summary>
+        </member>
+        <member name="M:Citrullia.FormMain.ExitL_Click(System.Object,System.EventArgs)">
+            <summary>
+            Exit the program.
+            </summary>
+        </member>
+        <member name="M:Citrullia.FormMain.LabMini_Click(System.Object,System.EventArgs)">
+            <summary>
+            Minimize the form.
+            </summary>
+        </member>
+        <member name="M:Citrullia.FormMain.CitValB_Click(System.Object,System.EventArgs)">
+            <summary>
+            Go to the Validation-step.
+            </summary>
+        </member>
+        <member name="M:Citrullia.FormMain.HomeB_Click(System.Object,System.EventArgs)">
+            <summary>
+            Go to the Home-step.
+            </summary>
+        </member>
+        <member name="M:Citrullia.FormMain.AnalysisB_Click(System.Object,System.EventArgs)">
+            <summary>
+            Go to the Analysis-step.
+            </summary>
+        </member>
+        <member name="M:Citrullia.FormMain.Ms1ValB_Click(System.Object,System.EventArgs)">
+            <summary>
+            Go to the Quantification-step.
+            </summary>
+        </member>
+        <member name="M:Citrullia.FormMain.ChangeToValidation">
+            <summary>
+            Change to Validation-step.
+            </summary>
+        </member>
+        <member name="M:Citrullia.FormMain.ChangeToAnalysis">
+            <summary>
+            Go to Analysis-step.
+            </summary>
+        </member>
+        <member name="P:Citrullia.FormMain.ValidationUI">
+            <summary>The validation form for citrullinations.</summary>
+        </member>
+        <member name="F:Citrullia.FormMain.citSpectrumValID">
+            <summary>The citrullination validation spectrum id.</summary>
+        </member>
+        <member name="M:Citrullia.FormMain.OpenCitValidationWindow(System.Int32)">
+            <summary>
+            Open validation spectrum for citrullinations.
+            </summary>
+            <param name="spectrumID">The spectrum ID.</param>
+        </member>
+        <member name="P:Citrullia.FormMain.ValidationArgUI">
+            <summary>The validation form for arginines.</summary>
+        </member>
+        <member name="F:Citrullia.FormMain.argSpectrumValID">
+            <summary>The arginine validation spectrum id.</summary>
+        </member>
+        <member name="M:Citrullia.FormMain.OpenArgValidationWindow(System.Int32)">
+            <summary>
+            Open validation spectrum for arginines.
+            </summary>
+            <param name="spectrumID">The spectrum ID.</param>
+        </member>
+        <member name="P:Citrullia.FormMain.ValidationLoneCitUI">
+            <summary>The validation form for lone citrullinations.</summary>
+        </member>
+        <member name="F:Citrullia.FormMain.lonelySpectrumValID">
+            <summary>The lonely citrullination validation spectrum id.</summary>
+        </member>
+        <member name="M:Citrullia.FormMain.OpenLonelyValidationWindow(System.Int32)">
+            <summary>
+            Open validation spectrum for lonely citrullinations.
+            </summary>
+            <param name="spectrumID">The spectrum ID.</param>
+        </member>
+        <member name="F:Citrullia.FormMain.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Citrullia.FormMain.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Citrullia.FormMain.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Citrullia.HelperUtilities">
+            <summary>A static utlitity class with helper functions.</summary>
+        </member>
+        <member name="M:Citrullia.HelperUtilities.AllIndexesCollectionOf(System.String,System.String)">
+            <summary>
+            Get all the indexes of a string.
+            </summary>
+            <param name="str">The string to be searched.</param>
+            <param name="searchstring">The search string.</param>
+            <returns>The collection of indicies.</returns>
+        </member>
+        <member name="M:Citrullia.HelperUtilities.AllIndexesOf(System.String,System.String)">
+            <summary>
+            Get all the indexes of a string.
+            </summary>
+            <param name="str">The string to be searched.</param>
+            <param name="searchString">The search string.</param>
+            <returns>The array of indicies.</returns>
+        </member>
+        <member name="M:Citrullia.HelperUtilities.IsApproximately(System.Double,System.Double,System.Double)">
+            <summary>
+            Check that <paramref name="a"/> and <paramref name="tolerance"/> are approximately equal within a <paramref name="tolerance"/>. 
+            </summary>
+            <param name="a">Value A.</param>
+            <param name="b">Value B.</param>
+            <param name="tolerance">The tolerence.</param>
+            <returns>True, if <paramref name="a"/> and <paramref name="b"/> are equal within <paramref name="tolerance"/>; Otherwise,false</returns>
+        </member>
+        <member name="M:Citrullia.HelperUtilities.CreateAAArray(System.String)">
+            <summary>
+            Create the AA array from an sequence.
+            TODO: Can be done in a more simple code.
+            </summary>
+            <param name="aaSeq">The aa sequence.</param>
+            <returns>The AA array.</returns>
+        </member>
+        <member name="T:Citrullia.Input">
+            <summary>Data class that represents the Mascot Generic Extended-file input (.MGX-files).</summary>
+        </member>
+        <member name="P:Citrullia.Input.FilePath">
+            <summary>The filepath of the input.</summary>
+        </member>
+        <member name="P:Citrullia.Input.MS1Scans">
+            <summary>The list of MS1 scans.</summary>
+        </member>
+        <member name="P:Citrullia.Input.MS2Scans">
+            <summary>The list of MS2 scans.</summary>
+        </member>
+        <member name="T:Citrullia.IonCalculation">
+            <summary>
+            Utility class for calculating the ions.
+            </summary>
+        </member>
+        <member name="F:Citrullia.IonCalculation.massDictAminoAcids">
+            <summary>The dictionary of amino acids and their mass.</summary>
+        </member>
+        <member name="M:Citrullia.IonCalculation.FindMS2PrecursorPeakIntInMS1(System.Double,Citrullia.RawScan)">
+            <summary>
+            Find the MS2 precursor peak the MS1 scans.
+            </summary>
+            <param name="precursorMass">The precursor mass.</param>
+            <param name="scanMS1">The MS1 scan.</param>
+            <returns>The intensity for the precursor peak.</returns>
+        </member>
+        <member name="M:Citrullia.IonCalculation.MakeAaMassDictionary">
+            <summary>
+            Make the dictionary of AA masses.
+            </summary>
+        </member>
+        <member name="M:Citrullia.IonCalculation.CalculateAllIons(Citrullia.XTSpectrum)">
+            <summary>
+            Calculate all of the ions in the spectrum.
+            </summary>
+            <param name="scanMS2">The MS2 spectrum.</param>
+            <returns>The MS2 spectrum with the ion information.</returns>
+        </member>
+        <member name="M:Citrullia.IonCalculation.CalcSpecIons(Citrullia.XTSpectrum)">
+            <summary>
+            Calculate the spectrum ions.
+            </summary>
+            <param name="scanMS2">The spectrum.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Citrullia.IonCalculation.GetDomainRange(Citrullia.XTSpectrum)">
+            <summary>
+            Get the domain range.
+            </summary>
+            <param name="scanMS2">The spectrum.</param>
+            <returns>The spectrum with domain ranges.</returns>
+        </member>
+        <member name="M:Citrullia.IonCalculation.GetCorrectBIonModificationIndex(Citrullia.XTSpectrum)">
+            <summary>
+            Get the correct modification index for the b-ions.
+            </summary>
+            <param name="scanMS2">The spectrum.</param>
+            <returns>The spectrum with the new information</returns>
+        </member>
+        <member name="M:Citrullia.IonCalculation.GetCorrectYIonModificationIndex(Citrullia.XTSpectrum)">
+            <summary>
+            Get the correct modification index for the y-ions.
+            </summary>
+            <param name="scanMS2">The spectrum.</param>
+            <returns>The spectrum with the new information</returns>
+        </member>
+        <member name="M:Citrullia.IonCalculation.FindPossibleBIons(Citrullia.XTSpectrum)">
+            <summary>
+            Find the possible B-ions.
+            </summary>
+            <param name="scanMS2">The spectrum</param>
+            <returns>The spectrum with the possible B-ions.</returns>
+        </member>
+        <member name="M:Citrullia.IonCalculation.FindPossibleYIons(Citrullia.XTSpectrum)">
+            <summary>
+            Find the possible Y-ions.
+            </summary>
+            <param name="scanMS2">The spectrum</param>
+            <returns>The spectrum with the possible Y-ions.</returns>
+        </member>
+        <member name="M:Citrullia.IonCalculation.FindExistingIons(Citrullia.XTSpectrum)">
+            <summary>
+            Find the existing ions.
+            </summary>
+            <param name="scanMS2">The spectrum.</param>
+            <returns>The spectrum with all of its ions.</returns>
+        </member>
+        <member name="M:Citrullia.IonCalculation.CalculateAllPotentialCitrullinationIons(Citrullia.XTSpectrum,Citrullia.RawScan)">
+            <summary>
+            Calculate all of the potential citrullination ions.
+            </summary>
+            <param name="argScanMS2">The arginine MS2 spectrum.</param>
+            <param name="potCitMS2Scan">The potential citrulliated scan.</param>
+            <returns>The scan with the potential citrullination ions.</returns>
+        </member>
+        <member name="T:Citrullia.MsSpectrum">
+            <summary>
+            The abstract class containing general information about <see cref="T:Citrullia.RawScan"/> and <see cref="T:Citrullia.XTSpectrum"/>.
+            </summary>
+        </member>
+        <member name="P:Citrullia.MsSpectrum.OriginalFileName">
+            <summary>The filename of the orginal input file.</summary>
+        </member>
+        <member name="P:Citrullia.MsSpectrum.RetentionTime">
+            <summary>The retention time of the spectra.</summary>
+        </member>
+        <member name="P:Citrullia.MsSpectrum.ParentScanNumber">
+            <summary>The scan number of the parent.</summary>
+        </member>
+        <member name="P:Citrullia.MsSpectrum.ParentScan">
+            <summary>The parent scan.</summary>
+        </member>
+        <member name="P:Citrullia.MsSpectrum.Orphan">
+            <summary>Indicates that the spectrum is an orphan (No parents).</summary>
+        </member>
+        <member name="P:Citrullia.MsSpectrum.MzValues">
+            <summary>The MZ-values in the spectrum.</summary>
+        </member>
+        <member name="P:Citrullia.MsSpectrum.Intencities">
+            <summary>The intensities in the spectrum.</summary>
+        </member>
+        <member name="P:Citrullia.MsSpectrum.PreCursorMz">
+            <summary>The MZ-value of the precursor.</summary>
+        </member>
+        <member name="P:Citrullia.MsSpectrum.Charge">
+            <summary>The charge of the scan.</summary>
+        </member>
+        <member name="P:Citrullia.MsSpectrum.BIonIndex">
+            <summary>The index of the B ions in the sequence.</summary>
+        </member>
+        <member name="P:Citrullia.MsSpectrum.B17IonIndex">
+            <summary>The index of the B-17 ions in the sequence.</summary>
+        </member>
+        <member name="P:Citrullia.MsSpectrum.B18IonIndex">
+            <summary>The index of the B-18 ions in the sequence.</summary>
+        </member>
+        <member name="P:Citrullia.MsSpectrum.YIonIndex">
+            <summary>The index of the Y ions in the sequence.</summary>
+        </member>
+        <member name="P:Citrullia.MsSpectrum.Y17IonIndex">
+            <summary>The index of the Y-17 ions in the sequence.</summary>
+        </member>
+        <member name="P:Citrullia.MsSpectrum.Y18IonIndex">
+            <summary>The index of the Y-18 ions in the sequence.</summary>
+        </member>
+        <member name="P:Citrullia.MsSpectrum.AIonIndex">
+            <summary>The index of the A ions in the sequence.</summary>
+        </member>
+        <member name="P:Citrullia.MsSpectrum.SpectrumPossibleBIons">
+            <summary>The posible B ion for every aa in the sequence.</summary>
+        </member>
+        <member name="P:Citrullia.MsSpectrum.SpectrumPossibleBm18Ions">
+            <summary>The posible B-18 ion for every aa in the sequence.</summary>
+        </member>
+        <member name="P:Citrullia.MsSpectrum.SpectrumPossibleBm17Ions">
+            <summary>The posible B-17 ion for every aa in the sequence.</summary>
+        </member>
+        <member name="P:Citrullia.MsSpectrum.SpectrumBm18Ions">
+            <summary>The B-18 ions in the spectrum.</summary>
+        </member>
+        <member name="P:Citrullia.MsSpectrum.SpectrumBm17Ions">
+            <summary>The B-17 ions in the spectrum.</summary>
+        </member>
+        <member name="P:Citrullia.MsSpectrum.SpectrumExistingBIons">
+            <summary>The B ions in the spectrum.</summary>
+        </member>
+        <member name="P:Citrullia.MsSpectrum.SpectrumPossibleYIons">
+            <summary>The posible Y ion for every aa in the sequence.</summary>
+        </member>
+        <member name="P:Citrullia.MsSpectrum.SpectrumPossibleYm18Ions">
+            <summary>The posible Y-18 ion for every aa in the sequence.</summary>
+        </member>
+        <member name="P:Citrullia.MsSpectrum.SpectrumPossibleYm17Ions">
+            <summary>The posible Y-17 ion for every aa in the sequence.</summary>
+        </member>
+        <member name="P:Citrullia.MsSpectrum.SpectrumYm18Ions">
+            <summary>The Y-18 ions in the spectrum.</summary>
+        </member>
+        <member name="P:Citrullia.MsSpectrum.SpectrumYm17Ions">
+            <summary>The Y-17 ions in the spectrum.</summary>
+        </member>
+        <member name="P:Citrullia.MsSpectrum.SpectrumExistingYIons">
+            <summary>The Y ions in the spectrum.</summary>
+        </member>
+        <member name="P:Citrullia.MsSpectrum.SpectrumAIons">
+            <summary>The A ions in the spectrum.</summary>
+        </member>
+        <member name="P:Citrullia.MsSpectrum.SpectrumPossibleAIons">
+            <summary>The posible A ion for every aa in the sequence.</summary>
+        </member>
+        <member name="P:Citrullia.MsSpectrum.IsoCyanicMzMs1">
+            <summary>The M/Z value of the isocyanic ion on MS1 level.</summary>
+        </member>
+        <member name="P:Citrullia.MsSpectrum.IsoCyanicLossMzMs2">
+            <summary>The M/Z value of the isocyanic ion on MS2 level.</summary>
+        </member>
+        <member name="P:Citrullia.MsSpectrum.CitScore">
+            <summary>The CitScore for the main spectrum. Is 0 if spectra is complementary.</summary>
+        </member>
+        <member name="P:Citrullia.MsSpectrum.MatchScore">
+            <summary>The score for the complementary spectra.</summary>
+        </member>
+        <member name="T:Citrullia.NativeMethods">
+            <summary>
+            Class containing the native API methods. Used for moving the forms-
+            </summary>
+        </member>
+        <member name="F:Citrullia.NativeMethods.ZERO_INTPTR">
+            <summary>An <see cref="T:System.IntPtr"/> with the value of 0 (zero). Used as the "lParam" in <see cref="M:Citrullia.NativeMethods.SendMessage(System.IntPtr,System.IntPtr,System.IntPtr,System.IntPtr)"/>.</summary>
+        </member>
+        <member name="F:Citrullia.NativeMethods.WM_NCLBUTTONDOWN">
+            <summary>An <see cref="T:System.IntPtr"/> with the value of hexadecimal A1 (Decimal: x). Messages that the left mouse button is pressed while the cursor is within the nonclient area of a window.
+            Used as the "Msg" in <see cref="M:Citrullia.NativeMethods.SendMessage(System.IntPtr,System.IntPtr,System.IntPtr,System.IntPtr)"/>. </summary>
+        </member>
+        <member name="F:Citrullia.NativeMethods.HT_CAPTION">
+            <summary>An <see cref="T:System.IntPtr"/> with the value of 2. Messages that the cursor is over the title bar. Used as the "wParam" in <see cref="M:Citrullia.NativeMethods.SendMessage(System.IntPtr,System.IntPtr,System.IntPtr,System.IntPtr)"/>.</summary>
+        </member>
+        <member name="M:Citrullia.NativeMethods.SendMessage(System.IntPtr,System.IntPtr,System.IntPtr,System.IntPtr)">
+            <summary>
+            Sends the specified message to a window or windows.
+            Source: https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-sendmessage
+            </summary>
+            <param name="hWnd">A handle to the window whose window procedure will receive the message.</param>
+            <param name="Msg">The message to be sent.</param>
+            <param name="wParam">Additional message-specific information.</param>
+            <param name="lParam">Additional message-specific information.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Citrullia.NativeMethods.ReleaseCapture">
+            <summary>
+            Releases the mouse capture from a window in the current thread and restores normal mouse input processing.
+            Source: https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-releasecapture
+            </summary>
+            <returns>True, if successful; Otherwise, false.</returns>
+        </member>
+        <member name="M:Citrullia.Program.Main">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+        <member name="T:Citrullia.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Citrullia.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Citrullia.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="T:Citrullia.QuantificationLone">
+            <summary>
+            Validation form for arginine.
+            </summary>
+        </member>
+        <member name="M:Citrullia.QuantificationLone.#ctor(Citrullia.QuantResult)">
+            <summary>
+            Create a new instance of <see cref="T:Citrullia.QuantificationLone"/>.
+            </summary>
+            <param name="result">The quantification result.</param>
+        </member>
+        <member name="M:Citrullia.QuantificationLone.LabelExit_Click(System.Object,System.EventArgs)">
+            <summary>
+            Close the window.
+            </summary>
+        </member>
+        <member name="M:Citrullia.QuantificationLone.LabelMinimize_Click(System.Object,System.EventArgs)">
+            <summary>
+            Minimize the window.
+            </summary>
+        </member>
+        <member name="M:Citrullia.QuantificationLone.UpdateWindow(Citrullia.QuantResult)">
+            <summary>
+            Update the  window
+            </summary>
+            <param name="result"></param>
+        </member>
+        <member name="M:Citrullia.QuantificationLone.SetCitInfo">
+            <summary>
+            Set the quantification information.
+            </summary>
+        </member>
+        <member name="M:Citrullia.QuantificationLone.GetSpectra(Citrullia.QuantResult)">
+            <summary>
+            Get the spectra from the new quantification.
+            </summary>
+            <param name="result">The quantification result.</param>
+        </member>
+        <member name="M:Citrullia.QuantificationLone.PanelTop_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Move form around using mouse.
+            Source: https://stackoverflow.com/a/7125686
+            </summary>
+        </member>
+        <member name="M:Citrullia.QuantificationLone.MetroButtonAddQuant_Click(System.Object,System.EventArgs)">
+            <summary>
+            Add the result to quantification.
+            </summary>
+        </member>
+        <member name="M:Citrullia.QuantificationLone.MetroButtonRemoveQuant_Click(System.Object,System.EventArgs)">
+            <summary>
+            Remove the result to quantification.
+            </summary>
+        </member>
+        <member name="M:Citrullia.QuantificationLone.MetroButtonSaveMS2_Click(System.Object,System.EventArgs)">
+            <summary>
+            Save the MS2 chart as an image.
+            </summary>
+        </member>
+        <member name="M:Citrullia.QuantificationLone.MetroButtonSaveMS1Cit_Click(System.Object,System.EventArgs)">
+            <summary>
+            Save the MS1 chart as an image.
+            </summary>
+        </member>
+        <member name="M:Citrullia.QuantificationLone.MetroButtonZoomResetMS2_Click(System.Object,System.EventArgs)">
+            <summary>
+            Reset the zoom on the MS2 chart.
+            </summary>
+        </member>
+        <member name="M:Citrullia.QuantificationLone.MetroButtonResetZoomMS1_Click(System.Object,System.EventArgs)">
+            <summary>
+            Reset the zoom on the MS1 chart.
+            </summary>
+        </member>
+        <member name="M:Citrullia.QuantificationLone.MetroButtonExportDataGrid_Click(System.Object,System.EventArgs)">
+            <summary>
+            Export the ion grids.
+            </summary>
+        </member>
+        <member name="M:Citrullia.QuantificationLone.BackgroundWorkerExport_DoWork(System.Object,System.ComponentModel.DoWorkEventArgs)">
+            <summary>
+            Background worker - Exportation of the ion grids.
+            </summary>
+        </member>
+        <member name="F:Citrullia.QuantificationLone.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Citrullia.QuantificationLone.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Citrullia.QuantificationLone.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Citrullia.ResultPair">
+            <summary>
+            The class containg the result pair consiting.
+            </summary>
+        </member>
+        <member name="P:Citrullia.ResultPair.MGXFile">
+            <summary>The MGX file name.</summary>
+        </member>
+        <member name="P:Citrullia.ResultPair.XTandemFile">
+            <summary>The X!Tandem result file name.</summary>
+        </member>
+        <member name="M:Citrullia.ResultPair.#ctor(System.String,System.String)">
+            <summary>
+            Create a new instance of <see cref="T:Citrullia.ResultPair"/> to export to file.
+            </summary>
+            <param name="mgxFile">The filename of the MGX file.</param>
+            <param name="xTandemFile">The filename of the X!Tandem result file.</param>
+        </member>
+        <member name="T:Citrullia.ResultFile">
+            <summary>
+            The class representing the result file.
+            </summary>
+        </member>
+        <member name="P:Citrullia.ResultFile.Results">
+            <summary>The list of <see cref="T:Citrullia.ResultPair"/>.</summary>
+        </member>
+        <member name="P:Citrullia.ResultFile.QuantifiedCitrullinatedSpectra">
+            <summary>The dictionary of indices for the citrullinated spectra and complementary spectra marked for quantification.</summary>
+        </member>
+        <member name="P:Citrullia.ResultFile.QuantifiedArginineSpectra">
+            <summary>The dictionary of indices for the arginine spectra and complementary spectra marked for quantification.</summary>
+        </member>
+        <member name="P:Citrullia.ResultFile.QuantifiedLoneCitrullinatedSpectra">
+            <summary>The dictionary of indices for the lone citrullinated spectra and complementary spectra marked for quantification.</summary>
+        </member>
+        <member name="M:Citrullia.ResultFile.#ctor(System.Collections.Generic.List{Citrullia.ResultPair},System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.Int32,System.Int32}}}},System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.Int32,System.Int32}}}},System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.Int32}})">
+            <summary>
+            Create a new instance of <see cref="T:Citrullia.ResultFile"/>.
+            </summary>
+            <param name="_results">The list of result pairs.</param>
+            <param name="_quantifiedCitrullinatedSpectra">The two dictionaries containing the filename of the spectra files and a list Keyvaluepairs with the index of the quantified citrullinated spectrum and their complementary arginine spectrum.</param>
+            <param name="_quantifiedArginineSpectra">The two dictionaries containing the filename of the spectra files and a list of Keyvaluepairs with the index of the quantified arginine spectrum and their complementary citrullinated spectrum.</param>
+            <param name="_quantifiedLoneCitrullinatedSpectra">The dictionary with the filename and a list of the indecies of the quantified lone spectra.</param>
+        </member>
+        <member name="M:Citrullia.ResultFile.#ctor(System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.Int32,System.Int32}}}},System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.Int32,System.Int32}}}},System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.Int32}})">
+            <summary>
+            Create a new instance of <see cref="T:Citrullia.ResultFile"/> to export to file.
+            </summary>
+            <param name="filePairs">The dictionary containing the MGX-file and the X!Tandem file.</param>
+            <param name="quantCitSpectra">The two dictionaries containing the filename of the spectra files and a list Keyvaluepairs with the index of the quantified citrullinated spectrum and their complementary arginine spectrum.</param>
+            <param name="quantArgSpectra">The two dictionaries containing the filename of the spectra files and a list of Keyvaluepairs with the index of the quantified arginine spectrum and their complementary citrullinated spectrum.</param>
+            <param name="quantLoneCitSpectra">The dictionary with the filename and a list of the indecies of the quantified lone spectra.</param>
+        </member>
+        <member name="T:Citrullia.Quantification">
+            <summary>
+            Utility class for the Qauantification.
+            </summary>
+        </member>
+        <member name="F:Citrullia.Quantification.citSpecSpecDict">
+            <summary>The dictionary of citrullinated spectra marked for quantification.</summary>
+        </member>
+        <member name="F:Citrullia.Quantification.argSpecScanDict">
+            <summary>The dictionary of arginine spectra marked for quantification.</summary>
+        </member>
+        <member name="F:Citrullia.Quantification.loneCitSpecList">
+            <summary>The list of lone citrullinated spectra marked for quantification.</summary>
+        </member>
+        <member name="F:Citrullia.Quantification.ppm">
+            <summary>The parent mass tolerance in PPM. Used to calculate deviation.</summary>
+        </member>
+        <member name="F:Citrullia.Quantification.rTInterval">
+            <summary>The retention time interval in minutes. Used to calculate the extracted ion current.</summary>
+        </member>
+        <member name="F:Citrullia.Quantification.QuantificationResults">
+            <summary>The list of quantification results.</summary>
+        </member>
+        <member name="M:Citrullia.Quantification.AddTokvpCitSpecSpecDict(Citrullia.XTSpectrum,Citrullia.XTSpectrum)">
+            <summary>
+            Add the citrullinated spectra to the quantififcation dictionary.
+            </summary>
+            <param name="citSpec">The citrullinated spectra.</param>
+            <param name="argSpec">The arginine spectra.</param>
+            <returns>The dictionary containing the new spectra.</returns>
+        </member>
+        <member name="M:Citrullia.Quantification.RemoveFromkvpCitSpecSpecList(Citrullia.XTSpectrum)">
+            <summary>
+            Remove the spectra from the quantification spectra.
+            </summary>
+            <param name="citSpec">The spectra to be removed.</param>
+            <returns>The new dictionary without the removed spectra.</returns>
+        </member>
+        <member name="M:Citrullia.Quantification.AddTokvpArgSpecScanDict(Citrullia.XTSpectrum,Citrullia.RawScan)">
+            <summary>
+            Add the arginine spectra to the quantififcation dictionary.
+            </summary>
+            <param name="argSpec">The arginine spectra.</param>
+            <param name="citScan">The citrullinated scan.</param>
+            <returns>The dictionary containing the new spectra.</returns>
+        </member>
+        <member name="M:Citrullia.Quantification.RemoveFromkvpArgSpecScanDict(Citrullia.XTSpectrum)">
+            <summary>
+            Remove the spectra from the quantification spectra.
+            </summary>
+            <param name="argSpec">The spectra to be removed.</param>
+            <returns>The new dictionary without the removed spectra.</returns>
+        </member>
+        <member name="M:Citrullia.Quantification.AddToLoneCitSpecList(Citrullia.XTSpectrum)">
+            <summary>
+            Add the lonely citrullinated spectra to the quantification dictionary.
+            </summary>
+            <param name="citSpec"></param>
+            <returns>The dictionary containing the new spectra.</returns>
+        </member>
+        <member name="M:Citrullia.Quantification.RemoveFromLoneCitSpecList(Citrullia.XTSpectrum)">
+            <summary>
+            Remove the spectra from the quantification spectra.
+            </summary>
+            <param name="citSpec">The spectra to be removed.</param>
+            <returns>The new dictionary without the removed spectra.</returns>
+        </member>
+        <member name="M:Citrullia.Quantification.DoQuantification">
+            <summary>
+            Perform Quantification.
+            </summary>
+        </member>
+        <member name="M:Citrullia.Quantification.LoneCitrullinationQunatification(System.Collections.Generic.List{Citrullia.QuantResult})">
+            <summary>
+            Quantification of lonely citrullinations.
+            </summary>
+            <param name="resultsQuant">The list of quantification results.</param>
+        </member>
+        <member name="M:Citrullia.Quantification.ArginineQuantification(System.Collections.Generic.List{Citrullia.QuantResult})">
+            <summary>
+            Quantification of arginine.
+            </summary>
+            <param name="resultsQuant">The list of quantification results.</param>
+        </member>
+        <member name="M:Citrullia.Quantification.CitrullinationQuantification(System.Collections.Generic.List{Citrullia.QuantResult})">
+            <summary>
+            Quantification of citrullinations.
+            </summary>
+            <param name="resultsQuant">The list of quantification results.</param>
+        </member>
+        <member name="M:Citrullia.Quantification.CalculateExtractedIonCount(Citrullia.MsSpectrum,System.Double,Citrullia.Input)">
+            <summary>
+            Calculate the extracted ion count from a <paramref name="spectrum"/>.
+            </summary>
+            <param name="spectrum">The spectrum to be calculated.</param>
+            <param name="xic">The current extracted ion count.</param>
+            <param name="input">The input file.</param>
+            <returns>The extracted ion count for the spectrum.</returns>
+        </member>
+        <member name="M:Citrullia.Quantification.CalculatePPMDeviation(System.Double,System.Int32)">
+            <summary>
+            Calculate the deviation.
+            TODO: Understand why it is returning 0.
+            </summary>
+            <param name="mzVal"></param>
+            <param name="ppm">The ppm.</param>
+            <returns>The deviation in ppm.</returns>
+        </member>
+        <member name="M:Citrullia.Quantification.RemoveProteinDbPrefix(System.String)">
+            <summary>
+            Remove the database prefix in the protein label.
+            </summary>
+            <param name="proteinLabel">The protein label with the DB prefix.</param>
+            <returns>The protein label without the DB prefix.</returns>
+        </member>
+        <member name="M:Citrullia.Quantification.GetQuantifiedComplementaryCitSpectrumIndex(Citrullia.XTSpectrum,System.Collections.Generic.List{Citrullia.RawScan})">
+            <summary>
+            Get the quantified complementary citrullinated spectrum index.
+            </summary>
+            <param name="argMainSpectrum">The quantified main arginine spectrum.</param>
+            <param name="complCitSpectra">The list of complementary arginine scans.</param>
+            <returns>The index of the quantified complementary spectra in <paramref name="complCitSpectra"/>.</returns>
+        </member>
+        <member name="M:Citrullia.Quantification.GetQuantifiedComplementaryArgSpectrumId(Citrullia.XTSpectrum,System.Collections.Generic.List{Citrullia.XTSpectrum})">
+            <summary>
+            Get the quantified complementary arginine spectrum index.
+            </summary>
+            <param name="citMainSpectrum">The quantified main citrullination spectrum.</param>
+            <param name="complArgSpectra">The list of complementary arginine spectra.</param>
+            <returns>The index of the quantified complementary spectra in <paramref name="complArgSpectra"/>.</returns>
+        </member>
+        <member name="T:Citrullia.QuantResult">
+            <summary>
+            Data class representing the Quantification result.
+            </summary>
+        </member>
+        <member name="P:Citrullia.QuantResult.Protein">
+            <summary>The protein label.</summary>
+        </member>
+        <member name="P:Citrullia.QuantResult.Sequence">
+            <summary>The protein sequence.</summary>
+        </member>
+        <member name="P:Citrullia.QuantResult.CitrullinatedExtractedIonCount">
+            <summary>The extracted ion count for the citrullinated spectra.</summary>
+        </member>
+        <member name="P:Citrullia.QuantResult.ArginineExtractedIonCount">
+            <summary>The extracted ion count for the arginine spectra.</summary>
+        </member>
+        <member name="P:Citrullia.QuantResult.CitPercent">
+            <summary>The citrullination percentage for the result.</summary>
+        </member>
+        <member name="P:Citrullia.QuantResult.ValidationBy">
+            <summary>The type of validation. Cit-paired=Citrulline-pair. Arg-paired=Arginine-pair. Lone=Lonely.</summary>
+        </member>
+        <member name="P:Citrullia.QuantResult.CitFileName">
+            <summary>The filename of the file that contains the citrulinated spectra.</summary>
+        </member>
+        <member name="P:Citrullia.QuantResult.ArgFileName">
+            <summary>The filename of the file that contains the arginine spectra.</summary>
+        </member>
+        <member name="P:Citrullia.QuantResult.CitRetentionTime">
+            <summary>The retention time for the citrullination spectra.</summary>
+        </member>
+        <member name="P:Citrullia.QuantResult.ArgRetentionTime">
+            <summary>The rention time for the arginine spectra.</summary>
+        </member>
+        <member name="P:Citrullia.QuantResult.CitCharge">
+            <summary>The charge of the citrullinated spectra.</summary>
+        </member>
+        <member name="P:Citrullia.QuantResult.ArgCharge">
+            <summary>The charge of the arginine spectra.</summary>
+        </member>
+        <member name="P:Citrullia.QuantResult.CitSpectrumID">
+            <summary>The ID for the citrullinated spectra.</summary>
+        </member>
+        <member name="P:Citrullia.QuantResult.ArgSpectrumID">
+            <summary>The ID for the arginine spectra.</summary>
+        </member>
+        <member name="P:Citrullia.QuantResult.Score">
+            <summary>The spectrum score.</summary>
+        </member>
+        <member name="P:Citrullia.QuantResult.MatchScore">
+            <summary>The score of the match.</summary>
+        </member>
+        <member name="T:Citrullia.RawScan">
+            <summary>Data class that represent the scans.</summary>
+        </member>
+        <member name="P:Citrullia.RawScan.Begin">
+            <summary>The begin string.</summary>
+        </member>
+        <member name="P:Citrullia.RawScan.ScanNumber">
+            <summary>The scan number.</summary>
+        </member>
+        <member name="P:Citrullia.RawScan.MSLevel">
+            <summary>The MS Level.</summary>
+        </member>
+        <member name="P:Citrullia.RawScan.Title">
+            <summary>The title.</summary>
+        </member>
+        <member name="P:Citrullia.RawScan.PreCursorIntencity">
+            <summary>The intensity of the precursor.</summary>
+        </member>
+        <member name="P:Citrullia.RawScan.BasePeak">
+            <summary>The MZ-value for the base peak.</summary>
+        </member>
+        <member name="P:Citrullia.RawScan.BaseIntensity">
+            <summary>The intensisty for the base peak.</summary>
+        </member>
+        <member name="P:Citrullia.RawScan.TotalIonCount">
+            <summary>The total ion count.</summary>
+        </member>
+        <member name="P:Citrullia.RawScan.End">
+            <summary>The end string.</summary>
+        </member>
+        <member name="T:Citrullia.ScoreFunction">
+            <summary>
+            Utility class for the score function.
+            </summary>
+        </member>
+        <member name="M:Citrullia.ScoreFunction.ScoreCitrullinationSpectra(System.Collections.Generic.Dictionary{Citrullia.XTSpectrum,System.Collections.Generic.List{Citrullia.XTSpectrum}})">
+            <summary>
+            Score the Citrullinated spectra.
+            </summary>
+            <param name="inputSpectra">The dictionary with the citrullinated spectra to be scored and their complementary arginine spectra.</param>
+            <returns>The dictionary with the scored citrullinated spectra an their complementary scored arginine spectra.</returns>
+        </member>
+        <member name="M:Citrullia.ScoreFunction.ScoreArginineSpectra(System.Collections.Generic.Dictionary{Citrullia.XTSpectrum,System.Collections.Generic.List{Citrullia.RawScan}})">
+            <summary>
+            Score the arginine spectra.
+            </summary>
+            <param name="inputSpectra">The dictionary with the arginine spectra to be scored and their complementary citrullinated spectra.</param>
+            <returns>he dictionary with the scored spectra an their complementary citrullinated spectra.</returns>
+        </member>
+        <member name="M:Citrullia.ScoreFunction.ScoreLoneCitrullinationSpectra(System.Collections.Generic.List{Citrullia.XTSpectrum})">
+            <summary>
+            Score the lone citrullinated spectra.
+            </summary>
+            <param name="inputSpectra">>The list with the citrullinated spectra to be scored.</param>
+            <returns>The list of scored spectra.</returns>
+        </member>
+        <member name="M:Citrullia.ScoreFunction.ScoreCitMainSpectrum(Citrullia.XTSpectrum)">
+            <summary>
+            Score the main citrullinated spectrum.
+            </summary>
+            <param name="spectrum">The spectrum to be scored.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Citrullia.ScoreFunction.ScoreCitComplSpectrum(Citrullia.XTSpectrum,Citrullia.RawScan)">
+            <summary>
+            Calculate CitScore and MatchScore for the complementary cit scan.
+            </summary>
+            <param name="mainArgSpectrum">The main arginine spectrum.</param>
+            <param name="complCitScan">The complementary cit scan.</param>
+            <returns>The scored scan.</returns>
+        </member>
+        <member name="M:Citrullia.ScoreFunction.ValidateSpectrumFragmentation(Citrullia.MsSpectrum,System.String[])">
+            <summary>
+            Validate spectrum fragmentation.
+            </summary>
+            <param name="spectrum">The spectrum with the fragmentation to be validated.</param>
+            <param name="aaSequence">The amino acid sequence.</param>
+            <returns>True, if valid fragmentation; Otherwise, false.</returns>
+        </member>
+        <member name="M:Citrullia.ScoreFunction.ScoreMatchMainCitComplArg(Citrullia.XTSpectrum,Citrullia.XTSpectrum)">
+            <summary>
+            Score the match between the main citrullinated spectrum and the complementary arginine spectrum.
+            </summary>
+            <param name="mainCitSpectrum">The main citrullinated spectrum.</param>
+            <param name="complArgSpectrum">The complementary arginine spectrum.</param>
+            <returns>The complementary spectrum with the match score.</returns>
+        </member>
+        <member name="M:Citrullia.ScoreFunction.ScoreMatchMainArgComplCit(Citrullia.XTSpectrum,Citrullia.RawScan)">
+            <summary>
+            Score the match between the main arginine spectrum and the complementary citrullinated spectrum.
+            </summary>
+            <param name="mainArgSpectrum">The main arginine spectrum.</param>
+            <param name="complCitSpectrum">The complementary citrullinated spectrum.</param>
+            <returns>The complementary spectrum with the match score.</returns>
+        </member>
+        <member name="M:Citrullia.ScoreFunction.GetClossetNQRAaRange(System.String[],System.Int32[]@)">
+            <summary>
+            Get the closset N/Q and R amino acid range.
+            </summary>
+            <param name="aaSeq">The aa sequences..</param>
+            <param name="aaIndexes">The array of indexes of the amino acid between N/Q and R amino acid as out parameter.</param>
+        </member>
+        <member name="M:Citrullia.ScoreFunction.GetIndexOfCitrullination(Citrullia.XTSpectrum)">
+            <summary>
+            Get the index of the citrullination in a citrullinated spectrum.
+            </summary>
+            <param name="spectrum">The spectrum.</param>
+            <returns>The index of the citrullination.</returns>
+        </member>
+        <member name="M:Citrullia.ScoreFunction.GetIndexOfCitrullinationFromArg(Citrullia.XTSpectrum)">
+            <summary>
+            Get the index of the citrullination in a arginine spectrum. Returns a qualified guess.
+            </summary>
+            <param name="spectrum">The spectrum.</param>
+            <returns>The index of the citrullination.</returns>
+        </member>
+        <member name="M:Citrullia.ScoreFunction.HasCorrectCitMassShift(System.Double,System.Double,System.Double,System.Boolean)">
+            <summary>
+            Check weather the spectrum has the correct mass shift.
+            </summary>
+            <param name="citMz">The m/z value for the citrullinated spectrum.</param>
+            <param name="argMz">The m/z value for the arginine spectrum.</param>
+            <param name="fragMassError">The fragment mass error. Used to calculate the tolerance.</param>
+            <param name="containsCit">Indicates that the ion contains the citrullination.</param>
+            <returns>True, if has correct mass shift; Otherwise, false.</returns>
+        </member>
+        <member name="M:Citrullia.ScoreFunction.IsIsoCyanicAcidLossPresentMs1(Citrullia.MsSpectrum)">
+            <summary>
+            Check if iso cyanic acid loss is present in the spectrum's MS1 scan.
+            </summary>
+            <param name="spectrum">The spectrum to be checked.</param>
+            <returns>True, if isocyanic acid is present; Otherwise, false.</returns>
+        </member>
+        <member name="M:Citrullia.ScoreFunction.CountIsoCyanicAcidLossPresentMs2(Citrullia.XTSpectrum)">
+            <summary>
+            Count the presence of isocyanic acid loss on MS2.
+            </summary>
+            <param name="citSpectrum">The citrullinated spectrum.</param>
+            <returns>The number of isocyanic acid losses.</returns>
+        </member>
+        <member name="M:Citrullia.ScoreFunction.CountIsoCyanicAcidLossPresentMs2(Citrullia.MsSpectrum,System.Int32,System.String[])">
+            <summary>
+            Count the presence of isocyanic acid loss on MS2.
+            </summary>
+            <param name="citSpectrum">The citrullinated spectrum.</param>
+            <param name="citIndex">The index of the citrullinated arginine.</param>
+            <param name="aaSeq">The amino acid sequence.</param>
+            <returns>The number of isocyanic acid losses.</returns>
+        </member>
+        <member name="M:Citrullia.ScoreFunction.IsoListContains(System.Collections.Generic.List{System.Double},System.Double)">
+            <summary>
+            Check if list of isocyanic loss contains a certain m/z-value.
+            </summary>
+            <param name="cyanlossMz">The list of isocyanic losses.</param>
+            <param name="mzVal">The M/Z-value to be checked.</param>
+            <returns>True, if list contains the iso cyanic loss; Otherwise, false.</returns>
+        </member>
+        <member name="M:Citrullia.ScoreFunction.AddCitSpectraAboveCutoffToQuantification(System.Collections.Generic.Dictionary{Citrullia.XTSpectrum,System.Collections.Generic.List{Citrullia.XTSpectrum}})">
+            <summary>
+            Add the Cit Spectra to quantification.
+            </summary>
+            <param name="scoredSpectra">The spectra to be added.</param>
+        </member>
+        <member name="M:Citrullia.ScoreFunction.AddArgSpectraAboveCutOffToQuantification(System.Collections.Generic.Dictionary{Citrullia.XTSpectrum,System.Collections.Generic.List{Citrullia.RawScan}})">
+            <summary>
+            Add the Arg Spectra to quantification.
+            </summary>
+            <param name="scoredSpectra">The spectra to be added.</param>
+        </member>
+        <member name="M:Citrullia.ScoreFunction.AddLoneCitSpectraAboveCutoffToQunatification(System.Collections.Generic.List{Citrullia.XTSpectrum})">
+            <summary>
+            Add the Lone Cit Spectra to quantification.
+            </summary>
+            <param name="scoredSpectra">The spectra to be added.</param>
+        </member>
+        <member name="T:Citrullia.ScoreSettings">
+            <summary>
+            Class containing information about the score weights.
+            </summary>
+        </member>
+        <member name="M:Citrullia.ScoreSettings.Load">
+            <summary>
+            Load the score weights.
+            </summary>
+        </member>
+        <member name="P:Citrullia.ScoreSettings.CutOffScore">
+            <summary>The score at which the spectra should be added to quantification automatically.</summary>
+        </member>
+        <member name="P:Citrullia.ScoreSettings.IncludeCutOff">
+            <summary>Indicates if the spectra above the cut-off should be automatically added.</summary>
+        </member>
+        <member name="F:Citrullia.ScoreSettings.CyanicLossTolerance">
+            <summary>The tolerance for determining if ion is a cyanic loss.</summary>
+        </member>
+        <member name="P:Citrullia.ScoreSettings.AIonMatchScore">
+            <summary>The score per A-ion match.</summary>
+        </member>
+        <member name="P:Citrullia.ScoreSettings.YIonMatchScore">
+            <summary>The score per Y-ion match.</summary>
+        </member>
+        <member name="P:Citrullia.ScoreSettings.BIonMatchScore">
+            <summary>The score per B-ion match.</summary>
+        </member>
+        <member name="P:Citrullia.ScoreSettings.LossMatchScoreDivider">
+            <summary>The number the ion score should be divied for when ion is loss.</summary>
+        </member>
+        <member name="P:Citrullia.ScoreSettings.MS1IsoCyanicLossScore">
+            <summary>The score for a isocyanic loss on MS1.</summary>
+        </member>
+        <member name="P:Citrullia.ScoreSettings.MS2IsoCyanLossAScore">
+            <summary>The score for the isocyanic loss for an a-ion on MS2.</summary>
+        </member>
+        <member name="P:Citrullia.ScoreSettings.MS2IsoCyanLossBScore">
+            <summary>The score for the isocyanic loss for an b-ion on MS2.</summary>
+        </member>
+        <member name="P:Citrullia.ScoreSettings.MS2IsoCyanLossYScore">
+            <summary>The score for the isocyanic loss for an y-ion on MS2.</summary>
+        </member>
+        <member name="P:Citrullia.ScoreSettings.MS2IsoCyanOnLossScoreDivider">
+            <summary>The divider for when the isocyanic loss is from an -17 or -18 ion.</summary>
+        </member>
+        <member name="M:Citrullia.ScoreSettings.Save">
+            <summary>
+            Save the score weights in the settings file.
+            </summary>
+        </member>
+        <member name="T:Citrullia.UserControls.AnalAdvancedUC">
+            <summary>The general parameter control in Analysis.</summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalAdvancedUC.#ctor">
+            <summary>
+            Create a new instance of <see cref="T:Citrullia.UserControls.AnalAdvancedUC"/>.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalAdvancedUC.AnalAdvancedUC_Load(System.Object,System.EventArgs)">
+            <summary>
+            Load the form.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalAdvancedUC.MetroButtonSave_Click(System.Object,System.EventArgs)">
+            <summary>
+            Save the settings.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalAdvancedUC.MetroButtonSetDefault_Click(System.Object,System.EventArgs)">
+            <summary>
+            Set to default settings
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalAdvancedUC.MetroToggleInclCutoff_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>Toogle the include spectra in validation above cutoff.</summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalAdvancedUC.MetroTextBoxCutOffScore_TextChanged(System.Object,System.EventArgs)">
+            <summary>Toogle the include spectra in validation above cutoff.</summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalAdvancedUC.MetroTextBoxAscore_TextChanged(System.Object,System.EventArgs)">
+            <summary>Change the A-ion score.</summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalAdvancedUC.MetroTextBoxBscore_TextChanged(System.Object,System.EventArgs)">
+            <summary>Change the B-ion score.</summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalAdvancedUC.MetroTextBoxYscore_TextChanged(System.Object,System.EventArgs)">
+            <summary>Change the Y-ion score.</summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalAdvancedUC.MetroTextBoxScoreDividerLoss_TextChanged(System.Object,System.EventArgs)">
+            <summary>Change the loss ion score divider.</summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalAdvancedUC.MetroTextBoxMs1IsoCyanLossScore_TextChanged(System.Object,System.EventArgs)">
+            <summary>Change score for the isocyanic loss at MS1.</summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalAdvancedUC.MetroTextBoxAIsoScore_TextChanged(System.Object,System.EventArgs)">
+            <summary>Change score for the isocyanic loss from an A-ion at MS2.</summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalAdvancedUC.MetroTextBoxBIsoScore_TextChanged(System.Object,System.EventArgs)">
+            <summary>Change score for the isocyanic loss from an B-ion at MS2.</summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalAdvancedUC.MetroTextBoxYIsoScore_TextChanged(System.Object,System.EventArgs)">
+            <summary>Change score for the isocyanic loss from an Y-ion at MS2.</summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalAdvancedUC.MetroTextBoxLossDividerIsoScore_TextChanged(System.Object,System.EventArgs)">
+            <summary>Change score divider for the isocyanic loss from an -17/-18-ion at MS2-</summary>
+        </member>
+        <member name="F:Citrullia.UserControls.AnalAdvancedUC.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalAdvancedUC.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalAdvancedUC.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Citrullia.UserControls.AnalGenUC">
+            <summary>The general parameter control in Analysis.</summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalGenUC.#ctor">
+            <summary>
+            Create a new instance of <see cref="T:Citrullia.UserControls.AnalGenUC"/>.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalGenUC.AnalGenUC_Load(System.Object,System.EventArgs)">
+            <summary>
+            Load the form.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalGenUC.MetroComboBoxEnzyme_SelectedIndexChanged(System.Object,System.EventArgs)">
+            <summary>
+            Change the digestion enzyme to be used by X!Tandem.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalGenUC.MetroComboBoxThreads_SelectedIndexChanged(System.Object,System.EventArgs)">
+            <summary>
+            Change the number of threads to be used by X!Tandem.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalGenUC.MetroToggleSearchCrapList_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            Indicate if X!Tandem should search "Crap List".
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalGenUC.MetroToggleRefine_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            Indicates if X!Tandem should refine the spectra.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalGenUC.MetroBtnLoadSeqFile_Click(System.Object,System.EventArgs)">
+            <summary>
+            Load sequence file used by X!Tandem.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalGenUC.FindUsableThreads">
+            <summary>
+            Find the number of usable threads.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalGenUC.UpdateTextBoxLFiles">
+            <summary>
+            Update the text in the file-textbox.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalGenUC.AddEnzymesToDigestionEnzymeList">
+            <summary>
+            Add the digestion enzyme to the enzyme-combobox.
+            </summary>
+        </member>
+        <member name="F:Citrullia.UserControls.AnalGenUC.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalGenUC.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalGenUC.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Citrullia.UserControls.AnalModUC">
+            <summary>The modification parameter control in Analysis.</summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalModUC.#ctor">
+            <summary>
+            Create a new instance of <see cref="T:Citrullia.UserControls.AnalModUC"/>.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalModUC.AnalModUC_Load(System.Object,System.EventArgs)">
+            <summary>
+            Load the form.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalModUC.MetroToggleAverage_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            Change weather X!Tandem should use average or monoisotopic masses.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalModUC.UpdateListViewModifications">
+            <summary>
+            Update the modification ListView.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalModUC.UpdateModifcationListView(MetroFramework.Controls.MetroListView,System.String,System.String)">
+            <summary>
+            Update the list view.
+            </summary>
+            <param name="list">The list view to be updated.</param>
+            <param name="modMono">The file that contains the modifications (Monoisotopic mass).</param>
+            <param name="modAvg">The file that contains the modifications (Average mass).</param>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalModUC.ReadModifications(System.String,System.Windows.Forms.ListView)">
+            <summary>
+            Read and add the modifications to the the list view.
+            </summary>
+            <param name="filePath">The filepath of the modifications to be added.</param>
+            <param name="metroListView">The list view they should be added to.</param>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalModUC.MetroListViewVModi_ItemChecked(System.Object,System.Windows.Forms.ItemCheckedEventArgs)">
+            <summary>
+            Change a variable modification.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalModUC.MetroListViewFModi_ItemChecked(System.Object,System.Windows.Forms.ItemCheckedEventArgs)">
+            <summary>
+            Change a fixed modification.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalModUC.MetroListViewRVModi_ItemChecked(System.Object,System.Windows.Forms.ItemCheckedEventArgs)">
+            <summary>
+            Change a variable modification (Refienment).
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalModUC.AddModifications(System.Windows.Forms.ListViewItem,System.Collections.Generic.List{System.String})">
+            <summary>
+            Add a modification to the modification list.
+            </summary>
+            <param name="listItem">The listview item to be added.</param>
+            <param name="modifications">The current list of modifications.</param>
+            <returns>The new list of modifications.</returns>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalModUC.RemoveModifications(System.Windows.Forms.ListViewItem,System.Collections.Generic.List{System.String})">
+            <summary>
+            Remmove a modification from the modification list.
+            </summary>
+            <param name="listItem">The listview item to be removed.</param>
+            <param name="modifications">The current list of modifications.</param>
+            <returns>The new list of modifications.</returns>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalModUC.ModificationsOutput(System.Collections.Generic.List{System.String})">
+            <summary>
+            Create the modification output.
+            </summary>
+            <param name="modifications">The list of modifications.</param>
+            <returns>The new modification string.</returns>
+        </member>
+        <member name="F:Citrullia.UserControls.AnalModUC.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalModUC.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalModUC.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Citrullia.UserControls.AnalOptUC">
+            <summary>The X!Tandem search parameter control in Analysis.</summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalOptUC.#ctor">
+            <summary>
+            Create a new instance of <see cref="T:Citrullia.UserControls.AnalOptUC"/>.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalOptUC.MetroToggleNSuppression_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            Change if X!Tandem should use Noise supression
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalOptUC.MetroToggleNTAcetylation_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            Change if X!Tandem should serch for N-termial acetylations.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalOptUC.MetroToggleNTPyrolidone_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            Change if X!Tandem should serch for N-terminal pyrolidone.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalOptUC.MetroToggleMIError_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            Change if X!Tandem should serch for mass isotope error?
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalOptUC.MetroToggleSCleavage_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            Change if X!Tandem should refine for missed cleavges.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalOptUC.MetroToggleUCleavage_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            Change if X!Tandem should refine for unspecific cleavges.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalOptUC.MetroTogglePMutations_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            Change if X!Tandem should refine for point mutations.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalOptUC.MetroToggleSSynthesis_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            Change if X!Tandem should refine for spectrum syntheis?.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalOptUC.MetroToggleRNTAcetylation_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            Change if X!Tandem should refine for N-termal acetylations.
+            </summary>
+        </member>
+        <member name="F:Citrullia.UserControls.AnalOptUC.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalOptUC.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalOptUC.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Citrullia.UserControls.AnalParUC">
+            <summary>The parameter control in Analysis.</summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalParUC.#ctor">
+            <summary>
+            Create a new instance of <see cref="T:Citrullia.UserControls.AnalParUC"/>.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalParUC.MetroComboBoxPME_SelectedIndexChanged(System.Object,System.EventArgs)">
+            <summary>
+            Change the parent mass error unit used by X!Tandem.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalParUC.MetroComboBoxFME_SelectedIndexChanged(System.Object,System.EventArgs)">
+            <summary>
+            Change the fragment mass unit used by X!Tandem.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalParUC.MetroButtonHCD_Click(System.Object,System.EventArgs)">
+            <summary>
+            Select the CID/HCD fragmentation method.
+            Changes the possible ion types that X!Tandem should search for.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalParUC.MetroButtonETD_Click(System.Object,System.EventArgs)">
+            <summary>
+            Select the ECD/ETD fragmentation method.
+            Changes the possible ion types that X!Tandem should search for.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalParUC.MetroToggleAions_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            Change if X!Tandem should search for A-ions.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalParUC.MetroToggleBions_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            Change if X!Tandem should search for B-ions.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalParUC.MetroToggleCions_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            Change if X!Tandem should search for C-ions.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalParUC.MetroToggleYions_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            Change if X!Tandem should search for Y-ions.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalParUC.MetroToggleXions_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            Change if X!Tandem should search for X-ions.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalParUC.MetroToggleZions_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            Change if X!Tandem should search for Z-ions.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalParUC.MetroTextBoxPMEMinus_TextChanged(System.Object,System.EventArgs)">
+            <summary>
+            Change the parent mass error minus? used by X!Tandem.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalParUC.MetroTextBoxPMEPLus_TextChanged(System.Object,System.EventArgs)">
+            <summary>
+            Change the parent mass error plus? used by X!Tandem.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalParUC.MetroTextBoxFMError_TextChanged(System.Object,System.EventArgs)">
+            <summary>
+            Change the fragment error used by X!Tandem.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalParUC.MetroTextBoxTPUsed_TextChanged(System.Object,System.EventArgs)">
+            <summary>
+            Change the total peaks used by X!Tandem.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalParUC.MetroTextBoxMPUsed_TextChanged(System.Object,System.EventArgs)">
+            <summary>
+            Change the minimum peaks used by X!Tandem.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalParUC.MetroTextBoxMPmz_TextChanged(System.Object,System.EventArgs)">
+            <summary>
+            Change the minimum parent MZ-value used by X!Tandem.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalParUC.MetroTextBoxMFmz_TextChanged(System.Object,System.EventArgs)">
+            <summary>
+            Change the minimum fragment MZ-value used by X!Tandem.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalParUC.MetroTextBoxMPCharge_TextChanged(System.Object,System.EventArgs)">
+            <summary>
+            Change the minimum parent charge used by X!Tandem.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalParUC.MetroTextBoxMEValue_TextChanged(System.Object,System.EventArgs)">
+            <summary>
+            Change the minimum e-value used by X!Tandem.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalParUC.MetroTextBoxMICount_TextChanged(System.Object,System.EventArgs)">
+            <summary>
+            Change the minimum ion count used by X!Tandem.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalParUC.MetroTextBoxMMCleavages_TextChanged(System.Object,System.EventArgs)">
+            <summary>
+            Change the maximum number of missed cleavages used by X!Tandem.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalParUC.MetroTextBoxRMEValue_TextChanged(System.Object,System.EventArgs)">
+            <summary>
+            Change the max e-value for refinment used by X!Tandem.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalParUC.MetroTextBoxMMNterm_TextChanged(System.Object,System.EventArgs)">
+            <summary>
+            Change the modification mass of the N-terminal used by X!Tandem.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalParUC.MetroTextBoxMMCterm_TextChanged(System.Object,System.EventArgs)">
+            <summary>
+            Change the modification mass of the C-terminal used by X!Tandem.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalParUC.MetroTextBoxMCNterm_TextChanged(System.Object,System.EventArgs)">
+            <summary>
+            Change the mass change of the N-terminal used by X!Tandem.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalParUC.MetroTextBoxMCCterm_TextChanged(System.Object,System.EventArgs)">
+            <summary>
+            Change the mass change of the C-terminal used by X!Tandem.
+            </summary>
+        </member>
+        <member name="F:Citrullia.UserControls.AnalParUC.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalParUC.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalParUC.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Citrullia.UserControls.AnalysisXUC">
+            <summary>The main Analysis control.</summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalysisXUC.#ctor">
+            <summary>
+            Create a new instance of <see cref="T:Citrullia.UserControls.AnalysisXUC"/>.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalysisXUC.Run_Click(System.Object,System.EventArgs)">
+            <summary>
+            Run X!Tandem.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalysisXUC.ButtonGeneral_Click(System.Object,System.EventArgs)">
+            <summary>
+            Go to the general analysis-tab.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalysisXUC.ButtonParameters_Click(System.Object,System.EventArgs)">
+            <summary>
+            Go to the parameter-tab.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalysisXUC.ButtonModifications_Click(System.Object,System.EventArgs)">
+            <summary>
+            Go to the modifications-tab.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalysisXUC.ButtonOptions_Click(System.Object,System.EventArgs)">
+            <summary>
+            Go to the options-tab.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalysisXUC.ChangeToValdiation">
+            <summary>
+            Go to the validation-step.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalysisXUC.ChangeAnalGenUCFilesLoadedBox">
+            <summary>
+            Update the list of loaded MGX-files.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalysisXUC.ButtonAdvanced_Click(System.Object,System.EventArgs)">
+            <summary>
+            Go to the advanced settings-step.
+            </summary>
+        </member>
+        <member name="F:Citrullia.UserControls.AnalysisXUC.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalysisXUC.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Citrullia.UserControls.AnalysisXUC.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Citrullia.UserControls.CitValUC">
+            <summary>The validation window.</summary>
+        </member>
+        <member name="M:Citrullia.UserControls.CitValUC.#ctor">
+            <summary>
+            Create a new instance of <see cref="T:Citrullia.UserControls.CitValUC"/>.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.CitValUC.ButtonFromCit_Click(System.Object,System.EventArgs)">
+            <summary>
+            Go to citrullination validation.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.CitValUC.ButtonFromArg_Click(System.Object,System.EventArgs)">
+            <summary>
+            Go to arginine validation.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.CitValUC.ButtonFromOther_Click(System.Object,System.EventArgs)">
+            <summary>
+            Go to lonely citrullination validation.
+            </summary>
+        </member>
+        <member name="F:Citrullia.UserControls.CitValUC.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.CitValUC.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Citrullia.UserControls.CitValUC.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Citrullia.UserControls.MS1Val">
+            <summary>The quantification screen.</summary>
+        </member>
+        <member name="M:Citrullia.UserControls.MS1Val.#ctor">
+            <summary>
+            Create a new instance of <see cref="T:Citrullia.UserControls.MS1Val"/>.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.MS1Val.MetroButtonQuantification_Click(System.Object,System.EventArgs)">
+            <summary>
+            Start quantification.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.MS1Val.MetroTextBoxRTInterval_TextChanged(System.Object,System.EventArgs)">
+            <summary>
+            Change the retention time.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.MS1Val.MetroTextBoxPMTolerance_TextChanged(System.Object,System.EventArgs)">
+            <summary>
+            Change the parent mass tolerence
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.MS1Val.AddQuantResultsToGrid(System.Windows.Forms.DataGridView)">
+            <summary>
+            Add the quantification results to the grid.
+            </summary>
+            <param name="grid">The grid to be added to.</param>
+        </member>
+        <member name="M:Citrullia.UserControls.MS1Val.CreateQuantCSV(System.Windows.Forms.DataGridView,System.String)">
+            <summary>
+            Create the quantification CSV-file.
+            </summary>
+            <param name="grid">The grid to be exported.</param>
+            <param name="csvPath">The path of the CSV-file.</param>
+        </member>
+        <member name="M:Citrullia.UserControls.MS1Val.GetOutputPathViaDialog(System.Boolean@)">
+            <summary>
+            Get the output path via SaveFileDialog.
+            </summary>
+            <returns>The output path.</returns>
+        </member>
+        <member name="M:Citrullia.UserControls.MS1Val.MetroButtonExportCSV_Click(System.Object,System.EventArgs)">
+            <summary>
+            Export to CSV.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.MS1Val.GetResultPathViaDialog(System.Boolean@)">
+            <summary>
+            Get the output path via SaveFileDialog.
+            </summary>
+            <returns>The output path.</returns>
+        </member>
+        <member name="M:Citrullia.UserControls.MS1Val.GetFolderViaDialog(System.Boolean@)">
+            <summary>
+            Get the folder via a FolderBrowserDialog.
+            </summary>
+            <param name="isCanceled">Indicator that the action was cancelled or that the directory does not exist.</param>
+            <returns>The path to the folder.</returns>
+        </member>
+        <member name="M:Citrullia.UserControls.MS1Val.MetroButtonSaveResult_Click(System.Object,System.EventArgs)">
+            <summary>
+            Save result.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Citrullia.UserControls.MS1Val.MetroButtonSaveImages_Click(System.Object,System.EventArgs)">
+            <summary>
+            Save MS2 images.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.MS1Val.OpenPairedValidationWindow(Citrullia.QuantResult)">
+            <summary>
+            Open the window for paired validation.
+            </summary>
+            <param name="result">The quantification result.</param>
+        </member>
+        <member name="M:Citrullia.UserControls.MS1Val.OpenLoneValidationWindow(Citrullia.QuantResult)">
+            <summary>
+            Open the window for lone validation.
+            </summary>
+            <param name="result">The quantification result.</param>
+        </member>
+        <member name="M:Citrullia.UserControls.MS1Val.MetroButtonUpdate_Click(System.Object,System.EventArgs)">
+            <summary>
+            Update the quantification grid after having added/removed quantification results.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Citrullia.UserControls.MS1Val.MetroToggleValEnabled_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            The validation window toogle state has been changed.
+            </summary>
+        </member>
+        <member name="F:Citrullia.UserControls.MS1Val.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.MS1Val.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Citrullia.UserControls.MS1Val.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Citrullia.UserControls.StartUC">
+            <summary>The home screen.</summary>
+        </member>
+        <member name="M:Citrullia.UserControls.StartUC.#ctor">
+            <summary>
+            Create an instance of <see cref="T:Citrullia.UserControls.StartUC"/>.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.StartUC.MetroButtonLoad_Click(System.Object,System.EventArgs)">
+            <summary>
+            Load the MGX-files.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.StartUC.BackgroundWorkerMGX_DoWork(System.Object,System.ComponentModel.DoWorkEventArgs)">
+            <summary>
+            Background worker - MGX File loader
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.StartUC.BackgroundWorkerMGX_RunWorkerCompleted(System.Object,System.ComponentModel.RunWorkerCompletedEventArgs)">
+            <summary>
+            Background worker MGX file loader complete.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.StartUC.MetroButtonLoadResult_Click(System.Object,System.EventArgs)">
+            <summary>
+            Load the result files.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.StartUC.ChangeToAnalysis">
+            <summary>Change to analysis-form</summary>
+        </member>
+        <member name="F:Citrullia.UserControls.StartUC.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.StartUC.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Citrullia.UserControls.StartUC.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Citrullia.UserControls.ValFromArg">
+            <summary>Validation from argine spectra.</summary>
+        </member>
+        <member name="M:Citrullia.UserControls.ValFromArg.#ctor">
+            <summary>
+            Create an instance of <see cref="T:Citrullia.UserControls.ValFromArg"/>.
+            </summary>
+        </member>
+        <member name="F:Citrullia.UserControls.ValFromArg.pMError">
+            <summary>Default parent mass error: 0.05.</summary>
+        </member>
+        <member name="M:Citrullia.UserControls.ValFromArg.MetroButtonFindArgSpectra_Click(System.Object,System.EventArgs)">
+            <summary>
+            Find the lonely arginine spectra.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.ValFromArg.BackgroundWorker_DoWork(System.Object,System.ComponentModel.DoWorkEventArgs)">
+            <summary>
+            Background worker - Finding spectra.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.ValFromArg.BackgroundWorker_RunWorkerCompleted(System.Object,System.ComponentModel.RunWorkerCompletedEventArgs)">
+            <summary>
+            Background worker - Done finding spectra.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.ValFromArg.MetroTextBoxPMError_TextChanged(System.Object,System.EventArgs)">
+            <summary>
+            Change parent mass error when changed in textbox.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.ValFromArg.ValidationWindow(System.Int32)">
+            <summary>
+            Open validation window for a spectrum.
+            </summary>
+            <param name="spectrumID">The spectrum ID.</param>
+        </member>
+        <member name="M:Citrullia.UserControls.ValFromArg.UpdateGrid(System.Windows.Forms.DataGridView)">
+            <summary>
+            Update the grid.
+            </summary>
+            <param name="grid">The data grid to be updated.</param>
+        </member>
+        <member name="M:Citrullia.UserControls.ValFromArg.MetroGridSelectedPeptides_SelectionChanged(System.Object,System.EventArgs)">
+            <summary>
+            An new spectrum has been selected.
+            </summary>
+        </member>
+        <member name="F:Citrullia.UserControls.ValFromArg.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.ValFromArg.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Citrullia.UserControls.ValFromArg.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Citrullia.UserControls.ValFromCit">
+            <summary>Validation from citrullinations.</summary>
+        </member>
+        <member name="M:Citrullia.UserControls.ValFromCit.#ctor">
+            <summary>
+            Create an instance of <see cref="T:Citrullia.UserControls.ValFromCit"/>.
+            </summary>
+        </member>
+        <member name="F:Citrullia.UserControls.ValFromCit.pMError">
+            <summary>Default parent mass error: 0.05.</summary>
+        </member>
+        <member name="M:Citrullia.UserControls.ValFromCit.MetroButtonFindCitSpectra_Click(System.Object,System.EventArgs)">
+            <summary>
+            Find the citrullinated spectra.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.ValFromCit.BackgroundWorker_DoWork(System.Object,System.ComponentModel.DoWorkEventArgs)">
+            <summary>
+            Background worker - Finding spectra.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.ValFromCit.BackgroundWorker_RunWorkerCompleted(System.Object,System.ComponentModel.RunWorkerCompletedEventArgs)">
+            <summary>
+            Background worker - Done finding spectra.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.ValFromCit.MetroTextBoxMPmz_TextChanged(System.Object,System.EventArgs)">
+            <summary>
+            Change parent mass error when changed in textbox.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.ValFromCit.ValidationWindow(System.Int32)">
+            <summary>
+            Open validation window for a spectrum.
+            </summary>
+            <param name="spectrumID">The spectrum ID.</param>
+        </member>
+        <member name="M:Citrullia.UserControls.ValFromCit.UpdateGrid(System.Windows.Forms.DataGridView)">
+            <summary>
+            Update the grid.
+            </summary>
+            <param name="grid">The data grid to be updated.</param>
+        </member>
+        <member name="M:Citrullia.UserControls.ValFromCit.MetroGridSelectedPeptides_SelectionChanged(System.Object,System.EventArgs)">
+            <summary>
+            An new spectrum has been selected.
+            </summary>
+        </member>
+        <member name="F:Citrullia.UserControls.ValFromCit.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.ValFromCit.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Citrullia.UserControls.ValFromCit.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Citrullia.UserControls.ValFromLoneCit">
+            <summary>
+            Validation from lonely citrullinations.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.ValFromLoneCit.#ctor">
+            <summary>
+            Create a new instance of <see cref="T:Citrullia.UserControls.ValFromLoneCit"/>.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.ValFromLoneCit.MetroButtonFindCitSpectra_Click(System.Object,System.EventArgs)">
+            <summary>
+            Find the lonely citrullinated spectra.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.ValFromLoneCit.BackgroundWorker_DoWork(System.Object,System.ComponentModel.DoWorkEventArgs)">
+            <summary>
+            Background worker - Finding spectra.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.ValFromLoneCit.BackgroundWorker_RunWorkerCompleted(System.Object,System.ComponentModel.RunWorkerCompletedEventArgs)">
+            <summary>
+            Background worker - Done finding spectra.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.ValFromLoneCit.ValidationWindow(System.Int32)">
+            <summary>
+            Open a validation window.
+            </summary>
+            <param name="spectrumID">The ID of the spectra to be validated.</param>
+        </member>
+        <member name="M:Citrullia.UserControls.ValFromLoneCit.UpdateGrid(System.Windows.Forms.DataGridView)">
+            <summary>
+            Update data grid.
+            </summary>
+            <param name="grid">The grid to be updated.</param>
+        </member>
+        <member name="M:Citrullia.UserControls.ValFromLoneCit.MetroGridSelectedPeptides_SelectionChanged(System.Object,System.EventArgs)">
+            <summary>
+            An new spectrum has been sellected.
+            </summary>
+        </member>
+        <member name="F:Citrullia.UserControls.ValFromLoneCit.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Citrullia.UserControls.ValFromLoneCit.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Citrullia.UserControls.ValFromLoneCit.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Citrullia.Validation">
+            <summary>
+            Utilities class for validations.
+            </summary>
+        </member>
+        <member name="F:Citrullia.Validation.citValResults">
+            <summary>List of citrullination spectra validation.</summary>
+        </member>
+        <member name="F:Citrullia.Validation.argValResults">
+            <summary>List of arginine spectra validation.</summary>
+        </member>
+        <member name="F:Citrullia.Validation.loneCitValResults">
+            <summary>List of lonely citrullination spectra validation.</summary>
+        </member>
+        <member name="F:Citrullia.Validation.citChosenForQuantList">
+            <summary>List of IDs for citrullination spectra chosen for quantification.</summary>
+        </member>
+        <member name="F:Citrullia.Validation.argChosenForQuantList">
+            <summary>List of IDs for arginine spectra chosen for quantification.</summary>
+        </member>
+        <member name="F:Citrullia.Validation.loneCitChosenForQuantList">
+            <summary>List of IDs for lonely citrullination spectra chosen for quantification.</summary>
+        </member>
+        <member name="M:Citrullia.Validation.FindCitrullinatedSpectra">
+            <summary>
+            Find citrullinated spectra.
+            </summary>
+        </member>
+        <member name="M:Citrullia.Validation.FindComplementaryArginineSpectra(System.Double)">
+            <summary>
+            Find complementary arginine spectra.
+            </summary>
+            <param name="error">The maximum parent mass error allowed.</param>
+        </member>
+        <member name="M:Citrullia.Validation.ReturnOriginalFileNameSpectrum(Citrullia.XTSpectrum,Citrullia.ValResult)">
+            <summary>
+            Set the original filename to the MS2 spectrum.
+            </summary>
+            <param name="specMS2">The MS2 spectrum.</param>
+            <param name="result">The validation result.</param>
+            <returns>The MS2 spectrum with the original filename.</returns>
+        </member>
+        <member name="M:Citrullia.Validation.FindArginineSpectra">
+            <summary>
+            Find the arginine spectra.
+            </summary>
+        </member>
+        <member name="M:Citrullia.Validation.FindComplimentaryCitrullinationScans(System.Double)">
+            <summary>
+            Find complementary citrullinated scans.
+            </summary>
+            <param name="error">The maximum parent mass error allowed.</param>
+        </member>
+        <member name="M:Citrullia.Validation.CalcRelativeIntVals(Citrullia.RawScan)">
+            <summary>
+            Calculate the relative intensities.
+            </summary>
+            <param name="mgfScan">The scan.</param>
+            <returns>The scan with normalised intensities.</returns>
+        </member>
+        <member name="M:Citrullia.Validation.GetListOfUsedIDs">
+            <summary>
+            Get a list of IDs for the spectra used as complementary spectra in the citrullination validation.
+            </summary>
+            <returns>The list of used spectra IDs.</returns>
+        </member>
+        <member name="M:Citrullia.Validation.ReturnOriginalFileNameScan(Citrullia.RawScan,Citrullia.Input)">
+            <summary>
+            Set the original filename to the MS2 spectrum.
+            </summary>
+            <param name="potCitSpecMS2">The MS2 scab.</param>
+            <param name="input">The input file.</param>
+            <returns>The MS2 scan with the original filename.</returns>
+        </member>
+        <member name="M:Citrullia.Validation.FindLonelyCitrullinatedSpectra">
+            <summary>
+            Find lonely citrullinated spectra.
+            </summary>
+        </member>
+        <member name="M:Citrullia.Validation.GetListOfUsedCitIDs">
+            <summary>
+            Get a list of used citrullination spectra IDs.
+            </summary>
+            <returns>A list of IDs for the used citrullination spectra.</returns>
+        </member>
+        <member name="M:Citrullia.Validation.GetOriginalScanID(Citrullia.XTSpectrum)">
+            <summary>
+            Get the orignal scan ID.
+            </summary>
+            <param name="scanMS2">The spectrum.</param>
+            <returns>The spectrum with the original scan ID.</returns>
+        </member>
+        <member name="T:Citrullia.QuantificationPaired">
+            <summary>
+            Validation form for arginine.
+            </summary>
+        </member>
+        <member name="M:Citrullia.QuantificationPaired.#ctor(Citrullia.QuantResult)">
+            <summary>
+            Create a new instance of <see cref="T:Citrullia.QuantificationPaired"/>.
+            </summary>
+            <param name="result">The quantification result.</param>
+        </member>
+        <member name="M:Citrullia.QuantificationPaired.UpdateWindow(Citrullia.QuantResult)">
+            <summary>
+            Update the quantification window.
+            </summary>
+            <param name="result">The quantification result.</param>
+        </member>
+        <member name="M:Citrullia.QuantificationPaired.SetCitInfo">
+            <summary>
+            Set the citrullinated spectra information.
+            </summary>
+        </member>
+        <member name="M:Citrullia.QuantificationPaired.SetArgInfo">
+            <summary>
+            Set the arginine spectra information.
+            </summary>
+        </member>
+        <member name="M:Citrullia.QuantificationPaired.GetSpectra(Citrullia.QuantResult)">
+            <summary>
+            Get the spectra from the new quantification.
+            </summary>
+            <param name="result">The quantification result.</param>
+        </member>
+        <member name="M:Citrullia.QuantificationPaired.PanelTop_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Move form around using mouse.
+            Source: https://stackoverflow.com/a/7125686
+            </summary>
+        </member>
+        <member name="M:Citrullia.QuantificationPaired.LabelExit_Click(System.Object,System.EventArgs)">
+            <summary>
+            Close the form.
+            </summary>
+        </member>
+        <member name="M:Citrullia.QuantificationPaired.LabelMinimize_Click(System.Object,System.EventArgs)">
+            <summary>
+            Minimize the form.
+            </summary>
+        </member>
+        <member name="M:Citrullia.QuantificationPaired.MetroButtonAddQuant_Click(System.Object,System.EventArgs)">
+            <summary>
+            Add result from quantification.
+            </summary>
+        </member>
+        <member name="M:Citrullia.QuantificationPaired.MetroButtonRemoveQuant_Click(System.Object,System.EventArgs)">
+            <summary>
+            Remove result from quantification.
+            </summary>
+        </member>
+        <member name="M:Citrullia.QuantificationPaired.MetroButtonSaveMS2_Click(System.Object,System.EventArgs)">
+            <summary>
+            Save the MS2 chart as image.
+            </summary>
+        </member>
+        <member name="M:Citrullia.QuantificationPaired.MetroButtonZoomResetMS2_Click(System.Object,System.EventArgs)">
+            <summary>
+            Reset the zoom on the MS2 chart.
+            </summary>
+        </member>
+        <member name="M:Citrullia.QuantificationPaired.MetroButtonSaveMS1Arg_Click(System.Object,System.EventArgs)">
+            <summary>
+            Save the MS1 arginine chart as image.
+            </summary>
+        </member>
+        <member name="M:Citrullia.QuantificationPaired.MetroButtonResetZoomArgMS1_Click(System.Object,System.EventArgs)">
+            <summary>
+            Reset the zoom on the MS1 arginine chart.
+            </summary>
+        </member>
+        <member name="M:Citrullia.QuantificationPaired.MetroButtonSaveMS1Cit_Click(System.Object,System.EventArgs)">
+            <summary>
+            Save the MS1 citrullination chart as image.
+            </summary>
+        </member>
+        <member name="M:Citrullia.QuantificationPaired.MetroButtonResetZoomCitMS1_Click(System.Object,System.EventArgs)">
+            <summary>
+            Reset the zoom on the MS1 citrullinations chart.
+            </summary>
+        </member>
+        <member name="M:Citrullia.QuantificationPaired.MetroButtonExportDataGrid_Click(System.Object,System.EventArgs)">
+            <summary>
+            Export the ion grids.
+            </summary>
+        </member>
+        <member name="M:Citrullia.QuantificationPaired.BackgroundWorkerExport_DoWork(System.Object,System.ComponentModel.DoWorkEventArgs)">
+            <summary>
+            Background worker - Exportation of the ion grids.
+            </summary>
+        </member>
+        <member name="F:Citrullia.QuantificationPaired.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Citrullia.QuantificationPaired.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Citrullia.QuantificationPaired.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Citrullia.SpectrumWriterUI">
+            <summary>
+            Class for creating the spectra images.
+            </summary>
+        </member>
+        <member name="M:Citrullia.SpectrumWriterUI.#ctor(System.String,System.Boolean)">
+            <summary>
+            Create a new instance of <see cref="T:Citrullia.SpectrumWriterUI"/>.
+            </summary>
+            <param name="directory">The save directory.</param>
+            <param name="createAnnotationFile">Indicates that the a file with the annotation should be created.</param>
+        </member>
+        <member name="M:Citrullia.SpectrumWriterUI.CreateImages(System.String)">
+            <summary>
+            Create the images.
+            </summary>
+            <param name="directory">The directory the images should be saved to.</param>
+        </member>
+        <member name="M:Citrullia.SpectrumWriterUI.CreateImage(System.String,System.Collections.Generic.KeyValuePair{Citrullia.QuantResult,System.Collections.Generic.KeyValuePair{Citrullia.MsSpectrum,Citrullia.MsSpectrum}})">
+            <summary>
+            Create the image.
+            </summary>
+            <param name="directory">The directory the image should be saved to.</param>
+            <param name="result">The result the image should be created from.</param>
+        </member>
+        <member name="M:Citrullia.SpectrumWriterUI.CreateQuantificationResultDictionary">
+            <summary>
+            Create the quantification result dictionary.
+            </summary>
+            <returns>The dictionary with the quantification result and the spectra in keyvaluepair.</returns>
+        </member>
+        <member name="F:Citrullia.SpectrumWriterUI.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Citrullia.SpectrumWriterUI.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Citrullia.SpectrumWriterUI.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Citrullia.ValidationCitUI">
+            <summary>
+            Validation form for citrullinations.
+            </summary>
+        </member>
+        <member name="M:Citrullia.ValidationCitUI.#ctor(Citrullia.FormMain)">
+            <summary>
+            Create an instance of <see cref="T:Citrullia.ValidationCitUI"/>.
+            </summary>
+            <param name="callingForm">The form calling this form.</param>
+        </member>
+        <member name="M:Citrullia.ValidationCitUI.PanelTop_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Move form around using mouse.
+            Source: https://stackoverflow.com/a/7125686
+            </summary>
+        </member>
+        <member name="M:Citrullia.ValidationCitUI.MetroButtonZoomReset_Click(System.Object,System.EventArgs)">
+            <summary>
+            Reset the zoom on the MS2 chart.
+            </summary>
+        </member>
+        <member name="M:Citrullia.ValidationCitUI.CheckBeforeButtonDisabling">
+            <summary>
+            Check if there are more than one scan in the spectrum.
+            </summary>
+        </member>
+        <member name="M:Citrullia.ValidationCitUI.MetroButtonNextArgScan_Click(System.Object,System.EventArgs)">
+            <summary>
+            Go to the next arginine scan.
+            </summary>
+        </member>
+        <member name="M:Citrullia.ValidationCitUI.MetroButtonPrevArgScan_Click(System.Object,System.EventArgs)">
+            <summary>
+            Go to the previous arginine scan.
+            </summary>
+        </member>
+        <member name="M:Citrullia.ValidationCitUI.AddNextArgSeries(System.Int32)">
+            <summary>
+            Add the next arginine series to the MS2 chart.
+            </summary>
+            <param name="index">The index of the chart.</param>
+        </member>
+        <member name="M:Citrullia.ValidationCitUI.AddNextArgMS1Series(Citrullia.XTSpectrum)">
+            <summary>
+            Add the next arginine MS1 series to the chart. 
+            </summary>
+            <param name="scanMS2">The MS2 spectrum.</param>
+        </member>
+        <member name="M:Citrullia.ValidationCitUI.AddCitInfo">
+            <summary>
+            Add the citrullination information.
+            </summary>
+        </member>
+        <member name="M:Citrullia.ValidationCitUI.AddArgInfo(System.Int32)">
+            <summary>
+            Add the arginine information.
+            </summary>
+            <param name="index">The index of the scan.</param>
+        </member>
+        <member name="M:Citrullia.ValidationCitUI.MetroButtonResetZoomMS1Cit_Click(System.Object,System.EventArgs)">
+            <summary>
+            Reset the zoom on the MS1 for the citrullinated spectrum.
+            </summary>
+        </member>
+        <member name="M:Citrullia.ValidationCitUI.MetroButtonResetZoomMS1Arg_Click(System.Object,System.EventArgs)">
+            <summary>
+            Reset the zoom on the MS1 for the arginine spectrum.
+            </summary>
+        </member>
+        <member name="M:Citrullia.ValidationCitUI.MetroButtonAddQuant_Click(System.Object,System.EventArgs)">
+            <summary>
+            Add the spectrum to quantification.
+            </summary>
+        </member>
+        <member name="M:Citrullia.ValidationCitUI.MetroButtonRemoveQuant_Click(System.Object,System.EventArgs)">
+            <summary>
+            Remove the spectrum from quantification.
+            </summary>
+        </member>
+        <member name="M:Citrullia.ValidationCitUI.MetroButtonExportDataGrid_Click(System.Object,System.EventArgs)">
+            <summary>
+            Export the ion grid.
+            </summary>
+        </member>
+        <member name="M:Citrullia.ValidationCitUI.LabelExit_Click(System.Object,System.EventArgs)">
+            <summary>
+            Close the form.
+            </summary>
+        </member>
+        <member name="M:Citrullia.ValidationCitUI.LabelMinimize_Click(System.Object,System.EventArgs)">
+            <summary>
+            Minimize the form.
+            </summary>
+        </member>
+        <member name="M:Citrullia.ValidationCitUI.MetroButtonSaveMS2_Click(System.Object,System.EventArgs)">
+            <summary>
+            Save the MS2 chart.
+            </summary>
+        </member>
+        <member name="M:Citrullia.ValidationCitUI.MetroButtonSaveMS1Cit_Click(System.Object,System.EventArgs)">
+            <summary>
+            Save the MS1 citrullinated spectra.
+            </summary>
+        </member>
+        <member name="M:Citrullia.ValidationCitUI.MetroButtonSaveMS1Arg_Click(System.Object,System.EventArgs)">
+            <summary>
+            Save the MS1 arginine spectra.
+            </summary>
+        </member>
+        <member name="M:Citrullia.ValidationCitUI.UpdateChosenForQuant(System.Int32,System.Boolean)">
+            <summary>
+            Update which spectra should be quantitised.
+            </summary>
+            <param name="id">The spectrum id.</param>
+            <param name="state">True, if should be added; If false, it should be removed.</param>
+            <returns>The new list of spectra that should be quantitised.</returns>
+        </member>
+        <member name="M:Citrullia.ValidationCitUI.EnableQuantButtons(Citrullia.XTSpectrum)">
+            <summary>
+            Check what state the quantificaation buttons should be in. 
+            </summary>
+            <param name="spec">The spectrum.</param>
+        </member>
+        <member name="M:Citrullia.ValidationCitUI.BackgroundWorkerExport_DoWork(System.Object,System.ComponentModel.DoWorkEventArgs)">
+            <summary>
+            Background worker - Export the data.
+            </summary>
+        </member>
+        <member name="M:Citrullia.ValidationCitUI.FindCitrullineSpectraKeyValuePair(System.Int32)">
+            <summary>
+            Find the KeyValuePair containing information about the arginine spectra.
+            </summary>
+            <param name="spectrumId">The spectrum ID.</param>
+        </member>
+        <member name="M:Citrullia.ValidationCitUI.UpdateValidationUI(System.Int32)">
+            <summary>
+            Update the spectrum validation.
+            </summary>
+            <param name="spectrumValID">The spectrum ID.</param>
+        </member>
+        <member name="M:Citrullia.ValidationCitUI.ChangeSpectrumIDAndScoreLabel">
+            <summary>
+            Change the label on the spectrum.
+            </summary>
+        </member>
+        <member name="F:Citrullia.ValidationCitUI.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Citrullia.ValidationCitUI.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Citrullia.ValidationCitUI.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Citrullia.ValidationArgUI">
+            <summary>
+            Validation form for arginine.
+            </summary>
+        </member>
+        <member name="M:Citrullia.ValidationArgUI.#ctor(Citrullia.FormMain)">
+            <summary>
+            Create an instance of <see cref="T:Citrullia.ValidationArgUI"/>.
+            </summary>
+            <param name="callingForm">The form calling this form.</param>
+        </member>
+        <member name="M:Citrullia.ValidationArgUI.PanelTop_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Move form around using mouse.
+            Source: https://stackoverflow.com/a/7125686
+            </summary>
+        </member>
+        <member name="M:Citrullia.ValidationArgUI.AddArgInfo">
+            <summary>
+            Add the arginine data.
+            </summary>
+        </member>
+        <member name="M:Citrullia.ValidationArgUI.AddPotCitInfo(System.Int32)">
+            <summary>
+            Add the info for a potential citrullination.
+            </summary>
+            <param name="index">The index of the potential citrullination.</param>
+        </member>
+        <member name="M:Citrullia.ValidationArgUI.CheckBeforeButtonDisabling">
+            <summary>
+            Check if there are more than one scan in the spectrum.
+            </summary>
+        </member>
+        <member name="M:Citrullia.ValidationArgUI.MetroButtonNextPotCitScan_Click(System.Object,System.EventArgs)">
+            <summary>
+            Go to the next potential citrullination scan.
+            </summary>
+        </member>
+        <member name="M:Citrullia.ValidationArgUI.MetroButtonPrevPotCitScan_Click(System.Object,System.EventArgs)">
+            <summary>
+            Go to the previous potential citrullination scan.
+            </summary>
+        </member>
+        <member name="M:Citrullia.ValidationArgUI.AddNextPotCitSeries(System.Int32)">
+            <summary>
+            Add the next potential citrullination series.
+            </summary>
+            <param name="index">The series index.</param>
+        </member>
+        <member name="M:Citrullia.ValidationArgUI.MetroButtonZoomResetMS2_Click(System.Object,System.EventArgs)">
+            <summary>
+            Reset the zoom on the MS2 chart.
+            </summary>
+        </member>
+        <member name="M:Citrullia.ValidationArgUI.MetroButtonResetZoomArgMS1_Click(System.Object,System.EventArgs)">
+            <summary>
+            Reset the zoom on the MS1 arginine spectra.
+            </summary>
+        </member>
+        <member name="M:Citrullia.ValidationArgUI.MetroButtonResetZoomPotCitMS1_Click(System.Object,System.EventArgs)">
+            <summary>
+            Reset the zoom on the MS1 potential Serie spectra.
+            </summary>
+        </member>
+        <member name="M:Citrullia.ValidationArgUI.AddNextPotCitMS1Series(Citrullia.RawScan)">
+            <summary>
+            Add the next potnetial cirullination MS1 series.
+            </summary>
+            <param name="scanMS1">The MS1 scan.</param>
+        </member>
+        <member name="M:Citrullia.ValidationArgUI.MetroButtonAddQuant_Click(System.Object,System.EventArgs)">
+            <summary>
+            Add the spectrum to quantification.
+            </summary>
+        </member>
+        <member name="M:Citrullia.ValidationArgUI.MetroButtonRemoveQuant_Click(System.Object,System.EventArgs)">
+            <summary>
+            Remove the spectrum from quantification.
+            </summary>
+        </member>
+        <member name="M:Citrullia.ValidationArgUI.MetroButtonExportDataGrid_Click(System.Object,System.EventArgs)">
+            <summary>
+            Export the spectra to an excel file.
+            </summary>
+        </member>
+        <member name="M:Citrullia.ValidationArgUI.MetroButtonSaveMS2_Click(System.Object,System.EventArgs)">
+            <summary>
+            Save the MS2 spectrum as an image.
+            </summary>
+        </member>
+        <member name="M:Citrullia.ValidationArgUI.MetroButtonMS1Arg_Click(System.Object,System.EventArgs)">
+            <summary>
+            Save the MS1 arginine spectrum as an image.
+            </summary>
+        </member>
+        <member name="M:Citrullia.ValidationArgUI.MetroButtonSaveMS1Cit_Click(System.Object,System.EventArgs)">
+            <summary>
+            Save the MS1 citrullination spectrum as an image.
+            </summary>
+        </member>
+        <member name="M:Citrullia.ValidationArgUI.LabelExit_Click(System.Object,System.EventArgs)">
+            <summary>
+            Close the form.
+            </summary>
+        </member>
+        <member name="M:Citrullia.ValidationArgUI.LabelMinimize_Click(System.Object,System.EventArgs)">
+            <summary>
+            Minimize the form.
+            </summary>
+        </member>
+        <member name="M:Citrullia.ValidationArgUI.UpdateChosenForQuant(System.Int32,System.Boolean)">
+            <summary>
+            Update which spectra should be quantitised.
+            </summary>
+            <param name="id">The spectrum id.</param>
+            <param name="state">True, if should be added; If false, it should be removed.</param>
+            <returns>The new list of spectra that should be quantitised.</returns>
+        </member>
+        <member name="M:Citrullia.ValidationArgUI.EnableQuantButtons(Citrullia.XTSpectrum)">
+            <summary>
+            Check what state the quantificaation buttons should be in. 
+            </summary>
+            <param name="spec">The spectrum.</param>
+        </member>
+        <member name="M:Citrullia.ValidationArgUI.BackgroundWorkerExport_DoWork(System.Object,System.ComponentModel.DoWorkEventArgs)">
+            <summary>
+            Background worker - Export the ion grid.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Citrullia.ValidationArgUI.FindArginineSpectraKeyValuePair(System.Int32)">
+            <summary>
+            Find the KeyValuePair containing information about the arginine spectra.
+            </summary>
+            <param name="spectrumId">The spectrum ID.</param>
+        </member>
+        <member name="M:Citrullia.ValidationArgUI.ChangeSpectrumIDAndScoreLabel">
+            <summary>
+            Set the new spectrum ID as the label.
+            </summary>
+        </member>
+        <member name="M:Citrullia.ValidationArgUI.UpdateValidationArgUI(System.Int32)">
+            <summary>
+            Update the validation window with a new spectrum
+            </summary>
+            <param name="argSpectrumValID">The new spectrum ID.</param>
+        </member>
+        <member name="F:Citrullia.ValidationArgUI.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Citrullia.ValidationArgUI.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Citrullia.ValidationArgUI.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Citrullia.ValidationLoneCitUI">
+            <summary>
+            Validation form for citrullinations.
+            </summary>
+        </member>
+        <member name="M:Citrullia.ValidationLoneCitUI.#ctor(Citrullia.FormMain)">
+            <summary>
+            Create an instance of <see cref="T:Citrullia.ValidationLoneCitUI"/>.
+            </summary>
+            <param name="callingForm">The form calling this form.</param>
+        </member>
+        <member name="M:Citrullia.ValidationLoneCitUI.PanelTop_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Move form around using mouse.
+            Source: https://stackoverflow.com/a/7125686
+            </summary>
+        </member>
+        <member name="M:Citrullia.ValidationLoneCitUI.FindSpec(System.Int32)">
+            <summary>
+            Find the spectrum.
+            </summary>
+            <param name="spectrumId">The spectrum ID.</param>
+        </member>
+        <member name="M:Citrullia.ValidationLoneCitUI.UpdateValidationUI(System.Int32)">
+            <summary>
+            Update the spectrum validation.
+            </summary>
+            <param name="spectrumValID">The spectrum ID.</param>
+        </member>
+        <member name="M:Citrullia.ValidationLoneCitUI.AddCitInfo">
+            <summary>
+            Add the citrullination information.
+            </summary>
+        </member>
+        <member name="M:Citrullia.ValidationLoneCitUI.MetroButtonAddQuant_Click(System.Object,System.EventArgs)">
+            <summary>
+            Add the spectrum to quantification.
+            </summary>
+        </member>
+        <member name="M:Citrullia.ValidationLoneCitUI.MetroButtonRemoveQuant_Click(System.Object,System.EventArgs)">
+            <summary>
+            Remove the spectrum from quantification.
+            </summary>
+        </member>
+        <member name="M:Citrullia.ValidationLoneCitUI.MetroButtonZoomResetMS2_Click(System.Object,System.EventArgs)">
+            <summary>
+            Reset the zoom on the MS2.
+            </summary>
+        </member>
+        <member name="M:Citrullia.ValidationLoneCitUI.MetroButtonResetZoomMS1_Click(System.Object,System.EventArgs)">
+            <summary>
+            Reset the zoom on the MS1.
+            </summary>
+        </member>
+        <member name="M:Citrullia.ValidationLoneCitUI.MetroButtonSaveMS2_Click(System.Object,System.EventArgs)">
+            <summary>
+            Save the MS2 chart.
+            </summary>
+        </member>
+        <member name="M:Citrullia.ValidationLoneCitUI.MetroButtonSaveMS1Cit_Click(System.Object,System.EventArgs)">
+            <summary>
+            Save the MS1 chart.
+            </summary>
+        </member>
+        <member name="M:Citrullia.ValidationLoneCitUI.MetroButtonExportDataGrid_Click(System.Object,System.EventArgs)">
+            <summary>
+            Export the ion grid.
+            </summary>
+        </member>
+        <member name="M:Citrullia.ValidationLoneCitUI.LabelExit_Click(System.Object,System.EventArgs)">
+            <summary>
+            Exit the form.
+            </summary>
+        </member>
+        <member name="M:Citrullia.ValidationLoneCitUI.LabelMinimize_Click(System.Object,System.EventArgs)">
+            <summary>
+            Minimize the form.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Citrullia.ValidationLoneCitUI.UpdateChosenForQuant(System.Int32,System.Boolean)">
+            <summary>
+            Update which spectra should be quantitised.
+            </summary>
+            <param name="id">The spectrum id.</param>
+            <param name="state">True, if should be added; If false, it should be removed.</param>
+            <returns>The new list of spectra that should be quantitised.</returns>
+        </member>
+        <member name="M:Citrullia.ValidationLoneCitUI.EnableQuantButtons(Citrullia.XTSpectrum)">
+            <summary>
+            Check what state the quantificaation buttons should be in. 
+            </summary>
+            <param name="spec">The spectrum.</param>
+        </member>
+        <member name="M:Citrullia.ValidationLoneCitUI.BackgroundWorkerExport_DoWork(System.Object,System.ComponentModel.DoWorkEventArgs)">
+            <summary>
+            Background worker - Export ion grid.
+            </summary>
+        </member>
+        <member name="F:Citrullia.ValidationLoneCitUI.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Citrullia.ValidationLoneCitUI.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Citrullia.ValidationLoneCitUI.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Citrullia.ValidationUIUtilities">
+            <summary>
+            Utilities class for the Validation UI.
+            </summary>
+        </member>
+        <member name="F:Citrullia.ValidationUIUtilities.BIonColor">
+            <summary>The spectrum and ion grid color for B-ions.</summary>
+        </member>
+        <member name="F:Citrullia.ValidationUIUtilities.B17IonColor">
+            <summary>The spectrum and ion grid color for B-17-ions.</summary>
+        </member>
+        <member name="F:Citrullia.ValidationUIUtilities.B18IonColor">
+            <summary>The spectrum and ion grid color for B-18-ions.</summary>
+        </member>
+        <member name="F:Citrullia.ValidationUIUtilities.YIonColor">
+            <summary>The spectrum and ion grid color for Y-ions.</summary>
+        </member>
+        <member name="F:Citrullia.ValidationUIUtilities.Y17IonColor">
+            <summary>The spectrum and ion grid color for Y-17-ions.</summary>
+        </member>
+        <member name="F:Citrullia.ValidationUIUtilities.Y18IonColor">
+            <summary>The spectrum and ion grid color for Y-18-ions.</summary>
+        </member>
+        <member name="F:Citrullia.ValidationUIUtilities.AIonColor">
+            <summary>The spectrum and ion grid color for A-ions.</summary>
+        </member>
+        <member name="F:Citrullia.ValidationUIUtilities.IsoCyanicLossColor">
+            <summary>The spectrum and ion grid color for isocyanic loss ions.</summary>
+        </member>
+        <member name="F:Citrullia.ValidationUIUtilities.UnidentifiedColor">
+            <summary>The spectrum and ion grid color for unidentified ions.</summary>
+        </member>
+        <member name="M:Citrullia.ValidationUIUtilities.CreateLoneCitMs2Chart(System.Windows.Forms.DataVisualization.Charting.Chart,Citrullia.MsSpectrum)">
+            <summary>
+            Create the MS2 chart for the lone citrullination.
+            </summary>
+            <param name="chartMS2">The chart for the MS2.</param>
+            <param name="spectrum">The spectrum to be drawn.</param>
+        </member>
+        <member name="M:Citrullia.ValidationUIUtilities.CreatePairedMs2Chart(System.Windows.Forms.DataVisualization.Charting.Chart,Citrullia.MsSpectrum,Citrullia.MsSpectrum)">
+            <summary>
+            Create the MS2 chart for paired validation.
+            </summary>
+            <param name="chartMS2">The chart.</param>
+            <param name="citSpectrum">The Cit spectrum.</param>
+            <param name="argSpectrum">The arginine spectrum.</param>
+        </member>
+        <member name="M:Citrullia.ValidationUIUtilities.CreateMS1Chart(System.Windows.Forms.DataVisualization.Charting.Chart,Citrullia.MsSpectrum)">
+            <summary>
+            Set the MS1 chart.
+            </summary>
+            <param name="chart">The chart to be set.</param>
+            <param name="scanMS1">The data to be inserted.</param>
+        </member>
+        <member name="M:Citrullia.ValidationUIUtilities.RoundToNext100(System.Double,System.Double)">
+            <summary>
+            Round the next 100.
+            </summary>
+            <param name="citVal">The highest citrullination MZ-value.</param>
+            <param name="argVal">The highest citrullination MZ-value.</param>
+            <returns>The highest MZ-value rounded to the next 100.</returns>
+        </member>
+        <member name="M:Citrullia.ValidationUIUtilities.RoundToNext100Lone(System.Double)">
+            <summary>
+            Round to the next 100.
+            </summary>
+            <param name="citVal">The value.</param>
+            <returns>The value rounded to next 100.</returns>
+        </member>
+        <member name="M:Citrullia.ValidationUIUtilities.ClearChart(System.Windows.Forms.DataVisualization.Charting.Chart)">
+            <summary>
+            Clear the chart.
+            </summary>
+            <param name="chart">The chart.</param>
+        </member>
+        <member name="M:Citrullia.ValidationUIUtilities.FillCitIonGrid(System.Windows.Forms.DataGridView,Citrullia.XTSpectrum)">
+            <summary>
+            Fill the ion grid with data.
+            </summary>
+            <param name="grid">The grid to be filled.</param>
+            <param name="citSpectra">The MS2 spectrum.</param>
+        </member>
+        <member name="M:Citrullia.ValidationUIUtilities.FillArgIonGrid(System.Windows.Forms.DataGridView,Citrullia.RawScan,Citrullia.XTSpectrum)">
+            <summary>
+            Fill the ion grid with data.
+            </summary>
+            <param name="grid">The grid to be filled.</param>
+            <param name="citSpectra">The MS2 scan.</param>
+            <param name="argSpectra">The arginine sister spectrum.</param>
+        </member>
+        <member name="M:Citrullia.ValidationUIUtilities.FillIonGridGeneral(System.Windows.Forms.DataGridView,Citrullia.MsSpectrum,System.String[])">
+            <summary>
+            The general fill ion grid.
+            </summary>
+            <param name="grid">The grid to be filled.</param>
+            <param name="spectrum">The spectrum.</param>
+            <param name="aaSeq">The AA sequence.</param>
+        </member>
+        <member name="M:Citrullia.ValidationUIUtilities.AnnotatePairedSpectra(System.Windows.Forms.DataVisualization.Charting.Chart,Citrullia.MsSpectrum,Citrullia.MsSpectrum,System.String[],System.Boolean,System.Text.StringBuilder)">
+            <summary>
+            Annotate a single spectra.
+            </summary>
+            <param name="chartMS2">The chart with the annotated chart.</param>
+            <param name="citSpectra">The citrullinated spectrum to be annotated.</param>
+            <param name="argSpectra">The arginine spectrum to be annotated.</param>
+            <param name="aaSeq">The aa sequence.</param>
+            <param name="createAnnotationFile">Indicates if a file with the annotations should be created.</param>
+            <param name="annotationWriter">The annotation writer.</param>
+        </member>
+        <member name="M:Citrullia.ValidationUIUtilities.AnnotateSingleSpectra(System.Windows.Forms.DataVisualization.Charting.Chart,Citrullia.MsSpectrum,System.String[],System.Boolean,System.Boolean,System.Text.StringBuilder)">
+            <summary>
+            Annotate a single spectra.
+            </summary>
+            <param name="chartMS2">The chart with the annotated chart.</param>
+            <param name="spectrum">The spectrum to be annotated.</param>
+            <param name="aaSeq">The aa sequence.</param>
+            <param name="isCitSpectra">Indicator if it is <paramref name="spectrum"/> is the citrullinated.</param>
+            <param name="createAnnotationFile">Indicates if a file with the annotations should be created.</param>
+            <param name="annotationWriter">The annotation writer.</param>
+        </member>
+        <member name="M:Citrullia.ValidationUIUtilities.CreateNotation(System.Windows.Forms.DataVisualization.Charting.Chart,System.Double,System.String,System.Boolean,System.Int32,System.Boolean,System.Text.StringBuilder)">
+            <summary>
+            Create notation.
+            </summary>
+            <param name="chartMS2">The chart in which the ion to be notated is.</param>
+            <param name="mz">The m/z of the ion to be notated.</param>
+            <param name="ionType">The type of ion.</param>
+            <param name="isCitSpectra">Indicates that the spectrum is a citrullinated.</param>
+            <param name="aaIndex">The index of the aa in the sequence.</param>
+            <param name="createAnnotationFile">Indicates if a file with the annotations should be created.</param>
+            <param name="annotationWriter">The annotation writer.</param>
+        </member>
+        <member name="M:Citrullia.ValidationUIUtilities.GetPointIndex(System.Double,System.Windows.Forms.DataVisualization.Charting.DataPointCollection)">
+            <summary>
+            Get the index of the point with m/z-value equal to the point's X-value.
+            </summary>
+            <param name="mz">The m/z-value.</param>
+            <param name="points">The collection of points.</param>
+            <returns>The point index.</returns>
+        </member>
+        <member name="T:Citrullia.ValResult">
+            <summary>
+            Data class the that represent the validation data.
+            </summary>
+        </member>
+        <member name="P:Citrullia.ValResult.CitSpectraDictionary">
+            <summary>The dictionary with X!Tandem citrullinated spectra and their complementary arginine spectra.</summary>
+        </member>
+        <member name="P:Citrullia.ValResult.ParentResult">
+            <summary>The parent X!Tandem result.</summary>
+        </member>
+        <member name="P:Citrullia.ValResult.ModifiedSpectra">
+            <summary>The list of citrulliated spectra.</summary>
+        </member>
+        <member name="P:Citrullia.ValResult.ArginineSpectra">
+            <summary>The list of arginine spectra.</summary>
+        </member>
+        <member name="P:Citrullia.ValResult.ArgSpectraDictionary">
+            <summary>The dictionary with X!Tandem arginine spectra and their complementary citrullinated scans.</summary>
+        </member>
+        <member name="T:Citrullia.XTModification">
+            <summary>Data class for representing X!Tandem modification.</summary>
+        </member>
+        <member name="P:Citrullia.XTModification.AminoAcid">
+            <summary>The modified amino acid as one-letter code.</summary>
+        </member>
+        <member name="P:Citrullia.XTModification.AtPosition">
+            <summary>The position of the modified amino acid.</summary>
+        </member>
+        <member name="P:Citrullia.XTModification.MassChange">
+            <summary>The change in mass caused by the modification.</summary>
+        </member>
+        <member name="T:Citrullia.XTProtein">
+            <summary>Data class for representing X!Tandem protein.</summary>
+        </member>
+        <member name="P:Citrullia.XTProtein.ProtEVal">
+            <summary>The e-value for the protein.</summary>
+        </member>
+        <member name="P:Citrullia.XTProtein.ProtID">
+            <summary>The protein ID.</summary>
+        </member>
+        <member name="P:Citrullia.XTProtein.ProtStartPos">
+            <summary>The start position of the protein.</summary>
+        </member>
+        <member name="P:Citrullia.XTProtein.ProtEndPos">
+            <summary>The stop position of the protein.</summary>
+        </member>
+        <member name="P:Citrullia.XTProtein.ProtLogFragIonInt">
+            <summary>The sum of fragment ions that identify the protein.</summary>
+        </member>
+        <member name="P:Citrullia.XTProtein.ProtSeq">
+            <summary>The sequence of the protein.</summary>
+        </member>
+        <member name="P:Citrullia.XTProtein.ProtLabel">
+            <summary>The description line from the FASTA file.</summary>
+        </member>
+        <member name="P:Citrullia.XTProtein.ProtFasta">
+            <summary>The URL for the FASTA file.</summary>
+        </member>
+        <member name="P:Citrullia.XTProtein.DomainStartPos">
+            <summary>The start position of the domain.</summary>
+        </member>
+        <member name="P:Citrullia.XTProtein.DomainEndPos">
+            <summary>The end position of the domain.</summary>
+        </member>
+        <member name="P:Citrullia.XTProtein.DomainExpect">
+            <summary>The e-value for the domain.</summary>
+        </member>
+        <member name="P:Citrullia.XTProtein.DomainMZ">
+            <summary>The mass of the protein.</summary>
+        </member>
+        <member name="P:Citrullia.XTProtein.Delta">
+            <summary>The difference between the spectrum and calculated mass</summary>
+        </member>
+        <member name="P:Citrullia.XTProtein.Hyperscore">
+            <summary>X!Tandem identification score.</summary>
+        </member>
+        <member name="P:Citrullia.XTProtein.NextScore">
+            <summary>The next score for the protein. TODO: Understand.</summary>
+        </member>
+        <member name="P:Citrullia.XTProtein.YScore">
+            <summary>The y ion score. TODO: Understand.</summary>
+        </member>
+        <member name="P:Citrullia.XTProtein.YIons">
+            <summary>The number of y ions.</summary>
+        </member>
+        <member name="P:Citrullia.XTProtein.BScore">
+            <summary>The b ion score. TODO: Understand.</summary>
+        </member>
+        <member name="P:Citrullia.XTProtein.BIons">
+            <summary>The number of b ions.</summary>
+        </member>
+        <member name="P:Citrullia.XTProtein.PreSeq">
+            <summary>The 4 amino acids before the domain.</summary>
+        </member>
+        <member name="P:Citrullia.XTProtein.PostSeq">
+            <summary>The 4 amino acids after the domain.</summary>
+        </member>
+        <member name="P:Citrullia.XTProtein.DoaminSeq">
+            <summary>The sequence of the domain.</summary>
+        </member>
+        <member name="P:Citrullia.XTProtein.MissedCleavages">
+            <summary>The number of potential missed clevage sites.</summary>
+        </member>
+        <member name="P:Citrullia.XTProtein.Modifications">
+            <summary>The list of protein modifications.</summary>
+        </member>
+        <member name="T:Citrullia.XTResult">
+            <summary>Data class for representing X!Tandem result.</summary>
+        </member>
+        <member name="P:Citrullia.XTResult.FilePath">
+            <summary>The filepath of the result file.</summary>
+        </member>
+        <member name="P:Citrullia.XTResult.FileName">
+            <summary>The filename of the result file.</summary>
+        </member>
+        <member name="P:Citrullia.XTResult.XSpectrums">
+            <summary>The list of spectra in the result file.</summary>
+        </member>
+        <member name="P:Citrullia.XTResult.OriginalInputFile">
+            <summary>The filename of the original input file.</summary>
+        </member>
+        <member name="T:Citrullia.XTSpectrum">
+            <summary>Data class for representing X!Tandem spectrum.</summary>
+        </member>
+        <member name="P:Citrullia.XTSpectrum.ID">
+            <summary>The spectrum ID.</summary>
+        </member>
+        <member name="P:Citrullia.XTSpectrum.ParentMass">
+            <summary>The parent mass.</summary>
+        </member>
+        <member name="P:Citrullia.XTSpectrum.ParentIonCharge">
+            <summary>The parent ion charge.</summary>
+        </member>
+        <member name="P:Citrullia.XTSpectrum.SpectrumEVal">
+            <summary>The e-value for the spectrum.</summary>
+        </member>
+        <member name="P:Citrullia.XTSpectrum.SpectrumLabel">
+            <summary>The spectrum label. FASTA file description line for the highest ranked identified protein.</summary>
+        </member>
+        <member name="P:Citrullia.XTSpectrum.LogSumFragIons">
+            <summary>The log10 value of the intensity sum.</summary>
+        </member>
+        <member name="P:Citrullia.XTSpectrum.MaxFragIonInt">
+            <summary>The max fragment intensity.</summary>
+        </member>
+        <member name="P:Citrullia.XTSpectrum.NormMulitplier">
+            <summary>Factor to convert normalized spectrum values to orginal values.</summary>
+        </member>
+        <member name="P:Citrullia.XTSpectrum.Proteins">
+            <summary>The list of proteins in the spectrum.</summary>
+        </member>
+        <member name="P:Citrullia.XTSpectrum.A0">
+            <summary>The hyperscore A0 of the spectrum.</summary>
+        </member>
+        <member name="P:Citrullia.XTSpectrum.A1">
+            <summary>The hyperscore's A1 of the spectrum.</summary>
+        </member>
+        <member name="P:Citrullia.XTSpectrum.HyperscoreNumbs">
+            <summary>The number of hyperscores.??</summary>
+        </member>
+        <member name="P:Citrullia.XTSpectrum.HyperscoreCounts">
+            <summary>The count of hyperscores for each score??.</summary>
+        </member>
+        <member name="P:Citrullia.XTSpectrum.ConSurvivalNumbs">
+            <summary>The number of convolution survival function number.??</summary>
+        </member>
+        <member name="P:Citrullia.XTSpectrum.ConSurvivalCounts">
+            <summary>The count of convolution survival function for each score.??</summary>
+        </member>
+        <member name="P:Citrullia.XTSpectrum.BIonNumbs">
+            <summary>The number of b ions.</summary>
+        </member>
+        <member name="P:Citrullia.XTSpectrum.BIonCounts">
+            <summary>The count of b ions.</summary>
+        </member>
+        <member name="P:Citrullia.XTSpectrum.YIonNumbs">
+            <summary>The number of y ions.</summary>
+        </member>
+        <member name="P:Citrullia.XTSpectrum.YIonCounts">
+            <summary>The number of y ions</summary>
+        </member>
+        <member name="P:Citrullia.XTSpectrum.SpectrumMZ">
+            <summary>The M/Z-value of the spectrum (M+H).</summary>
+        </member>
+        <member name="P:Citrullia.XTSpectrum.SpectrumDescription">
+            <summary>The scan title in the input file.</summary>
+        </member>
+        <member name="P:Citrullia.XTSpectrum.SpectrumAaMasses">
+            <summary>The masses of the amino acids in the seqence.</summary>
+        </member>
+        <member name="P:Citrullia.XTSpectrum.SpectrumDomainRange">
+            <summary>The domain range of the spectrum.</summary>
+        </member>
+        <member name="P:Citrullia.XTSpectrum.SpectrumDomainRangeReverse">
+            <summary>The reverse domain range of the spectrum.</summary>
+        </member>
+        <member name="P:Citrullia.XTSpectrum.SpectrumAminoAcidSequence">
+            <summary>The amino acids in the seqence.</summary>
+        </member>
+        <member name="P:Citrullia.XTSpectrum.SpectrumBIonModDict">
+            <summary>The dictionary of modification indexes and their mass changes for the b-ion.</summary>
+        </member>
+        <member name="P:Citrullia.XTSpectrum.SpectrumYIonModDict">
+            <summary>The dictionary of modification indexes and their mass changes for the y-ion.</summary>
+        </member>
+        <member name="T:Citrullia.XTInput">
+            <summary>The class containg the X!Tandem input data.</summary>
+        </member>
+        <member name="F:Citrullia.XTInput.Enzyme">
+            <summary>The digestion enzyme.</summary>
+        </member>
+        <member name="F:Citrullia.XTInput.SearchCrapList">
+            <summary>Should search crap list-</summary>
+        </member>
+        <member name="F:Citrullia.XTInput.Refinement">
+            <summary>Should perform refinments.</summary>
+        </member>
+        <member name="F:Citrullia.XTInput.Threads">
+            <summary>The number of processor threads to be used.</summary>
+        </member>
+        <member name="F:Citrullia.XTInput.SequenceFile">
+            <summary>The sequence FASTA file.</summary>
+        </member>
+        <member name="F:Citrullia.XTInput.PMEMinus">
+            <summary>The parent mass error minus.</summary>
+        </member>
+        <member name="F:Citrullia.XTInput.PMEPlus">
+            <summary>The parent mass error plus.</summary>
+        </member>
+        <member name="F:Citrullia.XTInput.PMEType">
+            <summary>The parent mass error unit.</summary>
+        </member>
+        <member name="F:Citrullia.XTInput.FMError">
+            <summary>The fragment mass error.</summary>
+        </member>
+        <member name="F:Citrullia.XTInput.FMEType">
+            <summary>The fragment mass error unit.</summary>
+        </member>
+        <member name="F:Citrullia.XTInput.Aions">
+            <summary>Should search for A-ions.</summary>
+        </member>
+        <member name="F:Citrullia.XTInput.Bions">
+            <summary>Should search for B-ions.</summary>
+        </member>
+        <member name="F:Citrullia.XTInput.Cions">
+            <summary>Should search for C-ions.</summary>
+        </member>
+        <member name="F:Citrullia.XTInput.Xions">
+            <summary>Should search for X-ions.</summary>
+        </member>
+        <member name="F:Citrullia.XTInput.Yions">
+            <summary>Should search for Y-ions.</summary>
+        </member>
+        <member name="F:Citrullia.XTInput.Zions">
+            <summary>Should search for Z-ions.</summary>
+        </member>
+        <member name="F:Citrullia.XTInput.TPUsed">
+            <summary>The total number of peaks used.</summary>
+        </member>
+        <member name="F:Citrullia.XTInput.MPUsed">
+            <summary>The minimum number of peaks used.</summary>
+        </member>
+        <member name="F:Citrullia.XTInput.MPmz">
+            <summary>The minimum parent MZ-value.</summary>
+        </member>
+        <member name="F:Citrullia.XTInput.MFmz">
+            <summary>The minimum fragment MZ-value.</summary>
+        </member>
+        <member name="F:Citrullia.XTInput.MPCharge">
+            <summary>The maximum parent charge.</summary>
+        </member>
+        <member name="F:Citrullia.XTInput.MEValue">
+            <summary>The maximum e-value.</summary>
+        </member>
+        <member name="F:Citrullia.XTInput.MICount">
+            <summary>The minimum ion count.</summary>
+        </member>
+        <member name="F:Citrullia.XTInput.MMCleavages">
+            <summary>The maximum missed cleavages.</summary>
+        </member>
+        <member name="F:Citrullia.XTInput.RMEVaue">
+            <summary>The maximum e-value for refinment.</summary>
+        </member>
+        <member name="F:Citrullia.XTInput.MCNterm">
+            <summary>The modification mass at the N-terminal.</summary>
+        </member>
+        <member name="F:Citrullia.XTInput.MCCterm">
+            <summary>The modification mass at the C-terminal.</summary>
+        </member>
+        <member name="F:Citrullia.XTInput.MMNterm">
+            <summary>The mass modification at the N-terminal.</summary>
+        </member>
+        <member name="F:Citrullia.XTInput.MMCterm">
+            <summary>The mass modification at the C-terminal.</summary>
+        </member>
+        <member name="F:Citrullia.XTInput.MassFragType">
+            <summary>The mass fragment type. Monoisotopic or Average.</summary>
+        </member>
+        <member name="F:Citrullia.XTInput.ModMass">
+            <summary>The fixed modifications.</summary>
+        </member>
+        <member name="F:Citrullia.XTInput.PotModMass">
+            <summary>The variable modifications.</summary>
+        </member>
+        <member name="F:Citrullia.XTInput.RModMass">
+            <summary>The refinment fixed mofications. Same as <see cref="F:Citrullia.XTInput.ModMass"/>.</summary>
+        </member>
+        <member name="F:Citrullia.XTInput.RefinmentPotModMass">
+            <summary>The refinement potential modifications.</summary>
+        </member>
+        <member name="F:Citrullia.XTInput.NSuppression">
+            <summary>Perform noise supression.</summary>
+        </member>
+        <member name="F:Citrullia.XTInput.NTAcetylation">
+            <summary>The N-terminal is acetylated.</summary>
+        </member>
+        <member name="F:Citrullia.XTInput.NTPyrolidone">
+            <summary>The N-terminal is pyrolidonated.</summary>
+        </member>
+        <member name="F:Citrullia.XTInput.MIError">
+            <summary>TODO: Mass isotope error?</summary>
+        </member>
+        <member name="F:Citrullia.XTInput.SCleavage">
+            <summary>Refinment for semi cleavages.</summary>
+        </member>
+        <member name="F:Citrullia.XTInput.UCleavage">
+            <summary>Refinment for unspecified cleavages.</summary>
+        </member>
+        <member name="F:Citrullia.XTInput.PMutations">
+            <summary>Refinment for point mutations.</summary>
+        </member>
+        <member name="F:Citrullia.XTInput.SSynthesis">
+            <summary>Refinment for spectrum syntesis.</summary>
+        </member>
+        <member name="F:Citrullia.XTInput.RNTAcetylation">
+            <summary>Refinment for N-terminal acetylations.</summary>
+        </member>
+    </members>
+</doc>

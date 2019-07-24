@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<bioml label="x! taxon-to-file matching list">
+<taxon label="yeast">
+<file format="peptide" URL="C:\Users\spec-makie17\Documents\Library_P.fasta" />
+</taxon>
+</bioml>

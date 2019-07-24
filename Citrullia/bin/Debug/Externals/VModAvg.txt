@@ -1,0 +1,9 @@
+Oxidation [CDFHKMNPRWY] 15.999
+Dimethylation [KPR] 28.053
+Deamination [GN] 0.985
+Citrullination [R] 0.985
+Methyl [CDEHIKLNQRST] 14.027
+Dioxidation [CFKMPRWY] 31.999
+Dehydration [CDNQSTY] -18.015
+Phosphorylation [CDHRSTY] 79.980
+Ammonia-Loss [CNST] -17.031
