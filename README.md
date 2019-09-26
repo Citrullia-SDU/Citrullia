@@ -10,5 +10,5 @@ Employee page: https://portal.findresearcher.sdu.dk/en/persons/php <br/>
 Research-group page: https://www.sdu.dk/en/om_sdu/institutter_centre/bmb_biokemi_og_molekylaer_biologi/forskning/forskningsenheder/peterhoejrup <br/>
 
 <b>Technical support</b></br>
-If any questions arise or problems are found, please ask or report them under the Issue-tap. (A GitHub account is required) Please use templates for either Bug report, Feature requests or Question. </br>
+If any questions arise or problems are found, please ask or report them under the Issue-tap (A GitHub account is required). Please use templates for either Bug report, Feature requests or Question. </br>
 <b>NB:</b> Support may be limited, we will, however, try to support as much as possible.
