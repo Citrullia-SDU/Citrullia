@@ -130,7 +130,8 @@ The validation process is done in three steps:
 
 Both complimentary modification pairs and lonely modified peptides can be extracted for simple quantification on MS1-level.
 
-                                                          - Christian Mikkelsen</value>
+                                                          - Christian Mikkelsen &amp;
+                                                            Mads Kierkegaard</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
