@@ -51,9 +51,10 @@
             this.metroButtonLoadMGX.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(152)))), ((int)(((byte)(3)))));
             this.metroButtonLoadMGX.ForeColor = System.Drawing.Color.White;
             this.metroButtonLoadMGX.Highlight = true;
-            this.metroButtonLoadMGX.Location = new System.Drawing.Point(481, 102);
+            this.metroButtonLoadMGX.Location = new System.Drawing.Point(641, 126);
+            this.metroButtonLoadMGX.Margin = new System.Windows.Forms.Padding(4);
             this.metroButtonLoadMGX.Name = "metroButtonLoadMGX";
-            this.metroButtonLoadMGX.Size = new System.Drawing.Size(75, 38);
+            this.metroButtonLoadMGX.Size = new System.Drawing.Size(100, 47);
             this.metroButtonLoadMGX.Style = MetroFramework.MetroColorStyle.White;
             this.metroButtonLoadMGX.TabIndex = 2;
             this.metroButtonLoadMGX.Text = "Load";
@@ -65,9 +66,10 @@
             // metroLabelSequenceFile
             // 
             this.metroLabelSequenceFile.AutoSize = true;
-            this.metroLabelSequenceFile.Location = new System.Drawing.Point(562, 111);
+            this.metroLabelSequenceFile.Location = new System.Drawing.Point(749, 137);
+            this.metroLabelSequenceFile.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabelSequenceFile.Name = "metroLabelSequenceFile";
-            this.metroLabelSequenceFile.Size = new System.Drawing.Size(115, 19);
+            this.metroLabelSequenceFile.Size = new System.Drawing.Size(120, 20);
             this.metroLabelSequenceFile.TabIndex = 11;
             this.metroLabelSequenceFile.Text = "Input Files (.MGX) ";
             this.metroLabelSequenceFile.UseCustomBackColor = true;
@@ -75,9 +77,10 @@
             // metroLabelLoadedMGXFiles
             // 
             this.metroLabelLoadedMGXFiles.AutoSize = true;
-            this.metroLabelLoadedMGXFiles.Location = new System.Drawing.Point(481, 143);
+            this.metroLabelLoadedMGXFiles.Location = new System.Drawing.Point(641, 176);
+            this.metroLabelLoadedMGXFiles.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabelLoadedMGXFiles.Name = "metroLabelLoadedMGXFiles";
-            this.metroLabelLoadedMGXFiles.Size = new System.Drawing.Size(163, 19);
+            this.metroLabelLoadedMGXFiles.Size = new System.Drawing.Size(172, 20);
             this.metroLabelLoadedMGXFiles.TabIndex = 12;
             this.metroLabelLoadedMGXFiles.Text = "No files has been loaded...";
             this.metroLabelLoadedMGXFiles.UseCustomBackColor = true;
@@ -87,19 +90,21 @@
             this.labelTitel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitel.ForeColor = System.Drawing.Color.Black;
             this.labelTitel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelTitel.Location = new System.Drawing.Point(285, 28);
+            this.labelTitel.Location = new System.Drawing.Point(380, 34);
+            this.labelTitel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTitel.Name = "labelTitel";
-            this.labelTitel.Size = new System.Drawing.Size(296, 25);
+            this.labelTitel.Size = new System.Drawing.Size(395, 31);
             this.labelTitel.TabIndex = 15;
             this.labelTitel.Text = "Welcome to Citrullia";
             this.labelTitel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // metroLoadingSpinner
             // 
-            this.metroLoadingSpinner.Location = new System.Drawing.Point(828, 3);
+            this.metroLoadingSpinner.Location = new System.Drawing.Point(1104, 4);
+            this.metroLoadingSpinner.Margin = new System.Windows.Forms.Padding(4);
             this.metroLoadingSpinner.Maximum = 100;
             this.metroLoadingSpinner.Name = "metroLoadingSpinner";
-            this.metroLoadingSpinner.Size = new System.Drawing.Size(50, 50);
+            this.metroLoadingSpinner.Size = new System.Drawing.Size(67, 62);
             this.metroLoadingSpinner.Spinning = false;
             this.metroLoadingSpinner.Style = MetroFramework.MetroColorStyle.Orange;
             this.metroLoadingSpinner.TabIndex = 16;
@@ -118,11 +123,12 @@
             this.textBoxIntro.BackColor = System.Drawing.Color.Silver;
             this.textBoxIntro.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxIntro.Font = new System.Drawing.Font("Segoe UI Light", 10.5F);
-            this.textBoxIntro.Location = new System.Drawing.Point(63, 74);
+            this.textBoxIntro.Location = new System.Drawing.Point(84, 91);
+            this.textBoxIntro.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxIntro.Multiline = true;
             this.textBoxIntro.Name = "textBoxIntro";
             this.textBoxIntro.ReadOnly = true;
-            this.textBoxIntro.Size = new System.Drawing.Size(362, 402);
+            this.textBoxIntro.Size = new System.Drawing.Size(483, 523);
             this.textBoxIntro.TabIndex = 18;
             this.textBoxIntro.Text = resources.GetString("textBoxIntro.Text");
             // 
@@ -131,20 +137,22 @@
             this.textBox1.BackColor = System.Drawing.Color.Silver;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Font = new System.Drawing.Font("Segoe UI Light", 10.5F);
-            this.textBox1.Location = new System.Drawing.Point(481, 74);
+            this.textBox1.Location = new System.Drawing.Point(641, 91);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(116, 22);
+            this.textBox1.Size = new System.Drawing.Size(155, 27);
             this.textBox1.TabIndex = 19;
             this.textBox1.Text = "New experiments:";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(696, 403);
+            this.pictureBox1.Location = new System.Drawing.Point(928, 496);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(120, 73);
+            this.pictureBox1.Size = new System.Drawing.Size(160, 90);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 20;
             this.pictureBox1.TabStop = false;
@@ -154,20 +162,22 @@
             this.textBox2.BackColor = System.Drawing.Color.Silver;
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.Font = new System.Drawing.Font("Segoe UI Light", 10.5F);
-            this.textBox2.Location = new System.Drawing.Point(481, 194);
+            this.textBox2.Location = new System.Drawing.Point(641, 239);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
+            this.textBox2.Size = new System.Drawing.Size(133, 27);
             this.textBox2.TabIndex = 24;
             this.textBox2.Text = "Open results:";
             // 
             // metroLabelLoadedResultFiles
             // 
             this.metroLabelLoadedResultFiles.AutoSize = true;
-            this.metroLabelLoadedResultFiles.Location = new System.Drawing.Point(481, 263);
+            this.metroLabelLoadedResultFiles.Location = new System.Drawing.Point(641, 324);
+            this.metroLabelLoadedResultFiles.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabelLoadedResultFiles.Name = "metroLabelLoadedResultFiles";
-            this.metroLabelLoadedResultFiles.Size = new System.Drawing.Size(163, 19);
+            this.metroLabelLoadedResultFiles.Size = new System.Drawing.Size(172, 20);
             this.metroLabelLoadedResultFiles.TabIndex = 23;
             this.metroLabelLoadedResultFiles.Text = "No files has been loaded...";
             this.metroLabelLoadedResultFiles.UseCustomBackColor = true;
@@ -175,9 +185,10 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(562, 231);
+            this.metroLabel2.Location = new System.Drawing.Point(749, 284);
+            this.metroLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(116, 19);
+            this.metroLabel2.Size = new System.Drawing.Size(121, 20);
             this.metroLabel2.TabIndex = 22;
             this.metroLabel2.Text = "Result Files (.CRX) ";
             this.metroLabel2.UseCustomBackColor = true;
@@ -187,9 +198,10 @@
             this.metroButtonLoadResult.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(152)))), ((int)(((byte)(3)))));
             this.metroButtonLoadResult.ForeColor = System.Drawing.Color.White;
             this.metroButtonLoadResult.Highlight = true;
-            this.metroButtonLoadResult.Location = new System.Drawing.Point(481, 222);
+            this.metroButtonLoadResult.Location = new System.Drawing.Point(641, 273);
+            this.metroButtonLoadResult.Margin = new System.Windows.Forms.Padding(4);
             this.metroButtonLoadResult.Name = "metroButtonLoadResult";
-            this.metroButtonLoadResult.Size = new System.Drawing.Size(75, 38);
+            this.metroButtonLoadResult.Size = new System.Drawing.Size(100, 47);
             this.metroButtonLoadResult.Style = MetroFramework.MetroColorStyle.White;
             this.metroButtonLoadResult.TabIndex = 21;
             this.metroButtonLoadResult.Text = "Load";
@@ -205,7 +217,7 @@
             // 
             // StartUC
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.Controls.Add(this.textBox2);
@@ -220,8 +232,9 @@
             this.Controls.Add(this.metroLabelLoadedMGXFiles);
             this.Controls.Add(this.metroLabelSequenceFile);
             this.Controls.Add(this.metroButtonLoadMGX);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "StartUC";
-            this.Size = new System.Drawing.Size(881, 540);
+            this.Size = new System.Drawing.Size(1175, 665);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
