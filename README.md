@@ -1,7 +1,7 @@
 # Citrullia
 
 Software developed by Christian Engelbrecht Mikkelsen and Mads Kierkegaard to identify citrullinated peptides.<br/>
-Article: (To be published) <br/>
+Article: Larsen DN, Mikkelsen CE, Kierkegaard M, et al. Citrullinome of <i>Porphyromonas gingivalis</i> Outer Membrane Vesicles: Confident Identification of Citrullinated Peptides. Mol & Cell Proteomics. January 2019:mcp.RA119.001700. doi:10.1074/mcp.RA119.001700 <br/>
 
 <b>Contact</b><br/>
 Professor Peter Højrup, Department of Biochemistry and Molecular Biology, SDU <br/>
