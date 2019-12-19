@@ -498,7 +498,7 @@ namespace Citrullia
             foreach (string line in mgxLines)
             {
                 // Check if the line is a comment or is empty. If so, skip the currrent line
-                if (line.StartsWith("#") || line == "")
+                if (line.StartsWith("#") || line == "" || line.StartsWith("<"))
                 {
                     continue;
                 }
@@ -509,24 +509,32 @@ namespace Citrullia
                     {
                         // Add the line to the list of scan info
                         singleScanInfo.Add("END IONS");
+
+                        if (singleScanInfo.Find(x => x.Contains("SCANS=")).Split('=').Last() == "") { singleScanInfo.Remove("SCANS="); singleScanInfo.Add("SCANS=0"); }
+                        if (singleScanInfo.Find(x => x.Contains("MS LEVEL=")).Split('=').Last() == "") { singleScanInfo.Remove("MS LEVEL="); singleScanInfo.Add("MS LEVEL=0"); }
+                        if (singleScanInfo.Find(x => x.Contains("RTINSECONDS=")).Split('=').Last() == "") { singleScanInfo.Remove("RTINSECONDS="); singleScanInfo.Add("RTINSECONDS=0"); }
+                        if (singleScanInfo.Find(x => x.Contains("CHARGE=")).Split('=').Last() == "") { singleScanInfo.Remove("CHARGE="); singleScanInfo.Add("CHARGE=0"); }
+                        if (singleScanInfo.Find(x => x.Contains("BASE PEAK=")).Split('=').Last() == "") { singleScanInfo.Remove("BASE PEAK="); singleScanInfo.Add("BASE PEAK=0"); }
+                        if (singleScanInfo.Find(x => x.Contains("BASE INTENSITY=")).Split('=').Last() == "") { singleScanInfo.Remove("BASE INTENSITY="); singleScanInfo.Add("BASE INTENSITY=0"); }
+                        if (singleScanInfo.Find(x => x.Contains("TIC=")).Split('=').Last() == "") { singleScanInfo.Remove("TIC="); singleScanInfo.Add("TIC=0"); }
                         // Add a new scan
                         scans.Add(new RawScan
                         {
-
                             Begin = singleScanInfo.Find(x => x.Contains("BEGIN")),
                             // Find and parse the scan number
                             ScanNumber = int.Parse(singleScanInfo.Find(x => x.Contains("SCANS=")).Split('=').Last()),
                             // Find and parse the MS Level
                             MSLevel = int.Parse(singleScanInfo.Find(x => x.Contains("MS LEVEL=")).Split('=').Last()),
+                            // Set the title of the scan
                             Title = singleScanTitle,
                             // Find and parse the Retention time
                             RetentionTime = int.Parse(singleScanInfo.Find(x => x.Contains("RTINSECONDS=")).Split('=').Last()),
                             // Find and parse the precursor MZ-value
-                            PreCursorMz = double.Parse(singleScanInfo.Find(x => x.Contains("PEPMASS=")).Split(' ').First().Replace("PEPMASS=",""), NumberFormat),
+                            PreCursorMz = double.Parse(singleScanInfo.Find(x => x.Contains("PEPMASS=")).Split(' ').First().Replace("PEPMASS=", ""), NumberFormat),
                             // Find and parse the precursor intensity
                             PreCursorIntencity = double.Parse(singleScanInfo.Find(x => x.Contains("PEPMASS=")).Split(' ').Last(), NumberFormat),
                             // Find and parse the charge
-                            Charge = int.Parse(singleScanInfo.Find(x => x.Contains("CHARGE=")).Split('=').Last().Replace("+","")),
+                            Charge = int.Parse(singleScanInfo.Find(x => x.Contains("CHARGE=")).Split('=').Last().Replace("+", "")),
                             // Find and parse the base peak MZ-value
                             BasePeak = double.Parse(singleScanInfo.Find(x => x.Contains("BASE PEAK=")).Split('=').Last(), NumberFormat),
                             // Find and parse the base peak intensity
@@ -561,7 +569,7 @@ namespace Citrullia
                             {
                                 singleScanTitle = line;
                             }
-                            else
+                            else if(char.IsDigit(line[0]))
                             {
                                 // If the line is not a scan info or title line it must be an peak-information line.
                                 // Parse the MZ-value and intensity.
