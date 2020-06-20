@@ -48,7 +48,7 @@ namespace Citrullia.UserControls
         {
             // Set the default settings
             metroTextBoxCutOffScore.Text = 50.ToString();
-            metroToggleInclCutoff.Checked = true;
+            metroToggleInclCutoff.Checked = false;
             metroTextBoxAscore.Text = 5.ToString();
             metroTextBoxBscore.Text = 10.ToString();
             metroTextBoxYscore.Text = 10.ToString();
